@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    		   xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="80dip" >
+
+		    <EditText
+		        android:id="@+id/editTextUserName"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:ems="10"
+		        android:background="@null"
+		        android:textSize="25sp"
+		        android:textColor="#587058"
+		        android:hint="User Name" 
+		        android:inputType="text" />
+		    
+		    <View android:layout_width="200dip" android:layout_height="3dip" android:background="#00da0c"
+		        android:layout_marginTop="5dip" android:layout_marginBottom="15dip" />
+		
+		    <EditText
+		        android:id="@+id/editTextPassword"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:ems="10"
+		        android:background="@null"
+		        android:hint="Password"
+		        android:textSize="22sp"
+		        android:textColor="#587498"
+		        android:inputType="textPassword" />
+		    
+		     <View android:layout_width="200dip" android:layout_height="3dip" android:background="#c0ef0c"
+		        android:layout_marginTop="5dip" android:layout_marginBottom="15dip" />
+		     
+		    <EditText
+		        android:id="@+id/editTextConfirmPassword"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:ems="10"
+		        android:background="@null"
+		        android:hint="Confirm Password"
+		        android:textSize="20sp"
+		        android:textColor="#587498"
+		        android:inputType="textPassword" />
+		    
+		     <View android:layout_width="200dip" android:layout_height="3dip" android:background="#cfdf0c"
+		        android:layout_marginTop="5dip" android:layout_marginBottom="15dip" />
+		     
+		    <Button
+			    android:id="@+id/buttonCreateAccount"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="Create Account"
+			    android:layout_marginBottom="60dp"
+			    android:textSize="18sp"
+			    android:background="#aaaadd"/>
+			
+    
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+	<RelativeLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_marginLeft="10dip"
+	    android:layout_marginRight="10dip"
+	    android:layout_marginTop="1dip"
+	    android:paddingTop="5dip"
+	    android:paddingBottom="2dip"
+	    android:background="@drawable/category_bg_selector" >
+	    
+		<TextView
+		    android:id="@android:id/text1"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:drawableLeft="@drawable/file"
+		    android:drawablePadding="5dip"
+		    android:textColor="@android:color/darker_gray"
+		    android:singleLine="true"
+		    android:ellipsize="end"
+		    android:textSize="18sp"
+		    android:gravity="center_vertical"
+		    android:paddingLeft="20dip"
+		/>
+	
+	</RelativeLayout>
+
+</LinearLayout>	

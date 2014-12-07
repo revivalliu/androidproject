@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+	<RelativeLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_marginLeft="10dip"
+	    android:layout_marginRight="10dip"
+	    android:layout_marginTop="3dip"
+	    android:layout_marginBottom="3dip"
+	    android:paddingTop="5dip"
+	    android:paddingBottom="2dip"
+	    android:background="@drawable/note_bg_selector" >
+	    
+	    <ImageView
+	        android:id="@+id/icon"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="5dip" />	    
+	
+	    <TextView
+	        android:id="@android:id/text1"
+	        android:layout_toRightOf="@id/icon"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+			android:shadowColor="#ffffff"
+	        android:shadowDx="0"
+	        android:shadowDy="0"
+	        android:shadowRadius="1"	        
+	        android:textColor="#587058"
+	        android:textSize="18sp" />
+	    
+	    <View 
+	        android:id="@+id/line"
+	        android:layout_toRightOf="@id/icon"
+	        android:layout_below="@android:id/text1"
+	        android:layout_width="fill_parent" 
+	        android:layout_height="1dip"
+		    android:layout_marginTop="3dip"
+		    android:layout_marginBottom="0dip"
+	        android:background="#777777" />
+
+	    <TextView
+	        android:id="@android:id/text2"
+	        android:layout_alignParentRight="true"
+	        android:layout_below="@id/line"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Small Text"
+	        android:textColor="#777777"
+	        android:textSize="10sp" />
+	
+	</RelativeLayout>    
+
+</LinearLayout>

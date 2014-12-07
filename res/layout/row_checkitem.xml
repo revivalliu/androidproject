@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="5dip"
+    android:paddingBottom="5dip" >
+
+    <TextView
+        android:id="@+id/item_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <CheckBox
+        android:id="@+id/item_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/cb_selector"
+        android:layout_gravity="center_vertical" />
+
+    <EditText
+        android:id="@+id/item_et"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:ems="10"
+        android:background="@null"
+        android:textSize="18sp"
+        android:textColor="#587498"
+        android:hint="_________________" >
+    </EditText>
+
+    <ImageButton
+        android:id="@+id/deleteitem_btn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:onClick="onClick"
+        android:background="@null"
+        android:src="@drawable/ic_input_delete" />
+
+</LinearLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yichen.procrasinationX"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19" />
+    
+    <!--uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" /-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.front" android:required="false" />    
+
+    <application
+        android:name="com.yichen.procrasinationX.SmartPad"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        
+        android:theme="@style/app_theme">
+        <activity
+            android:name="com.yichen.procrasinationX.login.LoginActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="com.yichen.procrasinationX.login.SignUpActivity"></activity>
+        <activity android:name="com.yichen.procrasinationX.AuthActivity"></activity>
+        <activity android:name="com.yichen.procrasinationX.MainActivity"></activity>
+        <activity android:name="com.yichen.procrasinationX.BrowseActivity"></activity>
+        <activity android:name="com.yichen.procrasinationX.ManageActivity"></activity>
+        <activity android:name="com.yichen.procrasinationX.SettingsActivity"></activity>
+        <activity android:name="com.yichen.procrasinationX.note.BaseActivity"></activity>
+        <activity android:name="com.yichen.procrasinationX.note.BasicActivity" android:theme="@android:style/Theme.Dialog"></activity>		<activity android:name="com.yichen.procrasinationX.note.ChecklistActivity" android:windowSoftInputMode="stateHidden"></activity>
+		<activity android:name="com.yichen.procrasinationX.note.SnapshotActivity" android:windowSoftInputMode="stateHidden"></activity>
+		<activity android:name="com.yichen.procrasinationX.note.PhotoActivity" android:windowSoftInputMode="stateHidden"></activity>
+         <activity android:name="com.yichen.procrasinationX.reminder.AddAlarmActivity" android:windowSoftInputMode="stateHidden"></activity>
+        <activity android:name="com.yichen.procrasinationX.reminder.SettingsActivity"></activity>
+        <activity android:name="com.yichen.procrasinationX.swipeback.SwipeBackActivity"></activity>
+        <activity android:name="com.yichen.procrasinationX.slidingmenu.SlidemenuMainActivity"></activity>
+        
+		<receiver android:name=".AlarmSetter">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+			</intent-filter>
+		</receiver>
+		<receiver android:name=".AlarmReceiver"></receiver>
+        
+		<service android:name=".AlarmService"></service>
+    </application>
+
+</manifest>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="5dip" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        
+	    <ImageButton
+	        android:id="@+id/category_btn"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:onClick="onClick"
+		    android:layout_alignParentLeft="true"
+		    android:layout_centerVertical="true"
+		    android:background="@drawable/btn2_bg"
+		    android:src="@drawable/folder" />
+
+		<Spinner
+		    android:id="@+id/spinner"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_toRightOf="@id/category_btn"
+		    android:layout_centerVertical="true"
+		    android:layout_marginLeft="5dip"
+		    android:background="@null" />
+        
+    </RelativeLayout>    
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_marginTop="5dip"
+        android:layout_marginBottom="5dip"
+        android:layout_weight="1"
+        android:background="@drawable/note_bg_repeat" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dip" >
+
+		    <EditText
+		        android:id="@+id/title_et"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:ems="10"
+		        android:background="@null"
+		        android:textSize="18sp"
+		        android:textColor="#587058"
+		        android:hint="@string/title" 
+		        android:inputType="text" />
+		    
+		    <View android:layout_width="fill_parent" android:layout_height="3dip" android:background="#cccccc"
+		        android:layout_marginTop="5dip" android:layout_marginBottom="15dip" />
+		
+		    <EditText
+		        android:id="@+id/content_et"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:ems="10"
+		        android:background="@null"
+		        android:hint="Write here ..."
+		        android:textSize="18sp"
+		        android:textColor="#587498"
+		        android:inputType="textMultiLine" />
+		
+		    <LinearLayout
+		        android:id="@+id/checklist_ll"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical" >
+		    </LinearLayout>
+
+			<ImageButton
+			    android:id="@+id/additem_btn"
+			    style="?android:attr/buttonStyleSmall"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="right"
+			    android:layout_marginBottom="5dip"
+			    android:onClick="onClick"
+			    android:background="@drawable/btn_bg_selector"
+			    android:src="@drawable/add" />
+			
+		    <Gallery
+		        android:id="@+id/gallery"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content" 
+		        android:spacing="10dip" />			
+	
+        </LinearLayout>
+    </ScrollView>
+        <ImageButton
+        android:id="@+id/done_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/btn_bg"
+        android:onClick="onClick"
+        android:src="@drawable/ok" />
+
+</LinearLayout>

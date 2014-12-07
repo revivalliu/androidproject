@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    
+    <ExpandableListView
+        android:id="@android:id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:layout_marginTop="15dip"
+        android:layout_marginBottom="5dip"        
+        android:listSelector="@android:color/transparent"
+        android:cacheColorHint="#00000000"
+        android:divider="@android:color/transparent"
+        android:drawSelectorOnTop="false"
+        android:groupIndicator="@null" />
+    
+    <TextView
+        android:id="@android:id/empty"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/no_data" />    
+    
+	<View android:layout_width="fill_parent" android:layout_height="2dip" android:background="#333333" />
+	
+    <LinearLayout
+        android:id="@+id/menubar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dip"
+        android:background="@drawable/bar_bg_repeat" >
+	    <ImageButton
+	        android:id="@+id/new_btn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="onClick"
+	        android:layout_marginRight="7dip"
+	        android:background="@drawable/btn_bg"
+	        android:src="@drawable/new_archive" />
+	    <ImageButton
+	        android:id="@+id/settings_btn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="onClick"
+	        android:layout_marginLeft="7dip"
+	        android:background="@drawable/btn_bg"
+	        android:src="@drawable/preferences" />
+    </LinearLayout>    
+
+</LinearLayout>

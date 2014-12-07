@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <PreferenceCategory android:title="Basic Settings">
+		<ListPreference
+		    android:defaultValue="0"
+		    android:entries="@array/sort_options_arr"
+		    android:entryValues="@array/val_arr"
+		    android:key="defaultSort"
+		    android:summary="Default sort order for files"
+		    android:title="Default Sort Order" />
+		<ListPreference
+		    android:defaultValue="0"
+		    android:entries="@array/default_category_opt_arr"
+		    android:entryValues="@array/val_arr"
+		    android:key="defaultCategoryOpt"
+		    android:summary="Default folder for new files"
+		    android:title="Default Folder" />
+		<ListPreference
+		    android:defaultValue="0"
+		    android:entries="@array/time_opt_arr"
+		    android:entryValues="@array/val_arr"
+		    android:key="timeOpt"
+		    android:summary="Which time to display"
+		    android:title="Display Time" />				
+	</PreferenceCategory>
+	
+    <PreferenceCategory android:title="Security Settings">
+	    <CheckBoxPreference 
+	        android:key="hideLocked"
+	        android:title="Hide Locked Items"
+	        android:defaultValue="false"
+	        android:summary="Hide a file or folder which is locked"
+		/>
+	    <EditTextPreference 
+	        android:key="password"
+	        android:title="Set Password"
+	        android:summary="Set a password for locked items"        
+	    />
+    </PreferenceCategory>    
+    
+</PreferenceScreen>
