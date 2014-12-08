@@ -13,6 +13,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -246,5 +248,6 @@ public class BrowseActivity extends Activity implements AdapterView.OnItemClickL
     	intent.putExtra(Note.COL_ID, id);
     	ctx.startActivity(intent);		
 	}
+	
 
 }

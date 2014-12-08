@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/snapshot"
+          android:icon="@drawable/smile"
+          android:title="@string/snapshot"
+    		  android:showAsAction="ifRoom"/>
+    <item android:id="@+id/settings"
+          android:icon="@drawable/ic_pages"
+          android:title="@string/settings" />
+    <item 
+              android:id="@+id/help" 
+              android:icon = "@drawable/ic_communities"
+              android:title="@string/help" 
+              android:showAsAction="ifRoom" />
+       <item 
+              android:id="@+id/share" 
+              android:icon = "@drawable/ic_people"
+              android:title="@string/share" 
+              android:showAsAction="ifRoom" />
+              
+        <item 
+              android:id="@+id/others" 
+              android:icon = "@drawable/ic_whats_hot"
+              android:title="@string/more" 
+              android:showAsAction="ifRoom" />
+    
+</menu>

@@ -183,6 +183,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int fromdate_tv=0x7f0b0011;
         public static final int gallery=0x7f0b0034;
         public static final int go_btn=0x7f0b0007;
+        public static final int help=0x7f0b0055;
         public static final int hours_et=0x7f0b0025;
         public static final int icon=0x7f0b0008;
         public static final int image=0x7f0b000d;
@@ -193,7 +194,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int line=0x7f0b0041;
         public static final int list_slidermenu=0x7f0b0002;
         public static final int menu_delete=0x7f0b004d;
-        public static final int menu_delete_all=0x7f0b0053;
+        public static final int menu_delete_all=0x7f0b0058;
         public static final int menu_delete_repeating=0x7f0b004e;
         public static final int menu_edit=0x7f0b004c;
         public static final int menu_lock=0x7f0b004f;
@@ -207,14 +208,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int msg_tv=0x7f0b003b;
         public static final int new_btn=0x7f0b0048;
         public static final int note_list=0x7f0b0046;
+        public static final int others=0x7f0b0057;
         public static final int pass_et=0x7f0b0006;
         public static final int radio0=0x7f0b0017;
         public static final int radio1=0x7f0b0018;
         public static final int radioGroup=0x7f0b0016;
         public static final int relativeLayout3=0x7f0b0019;
         public static final int relativeLayout4=0x7f0b001e;
+        public static final int settings=0x7f0b0054;
         public static final int settings_btn=0x7f0b004a;
-        public static final int sign_to_list_menu=0x7f0b0054;
+        public static final int share=0x7f0b0056;
+        public static final int sign_to_list_menu=0x7f0b0059;
+        public static final int snapshot=0x7f0b0053;
         public static final int sort_btn=0x7f0b0049;
         public static final int sound_cb=0x7f0b0003;
         public static final int spinner=0x7f0b002f;
@@ -271,18 +276,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int toast=0x7f03001c;
     }
     public static final class menu {
-        public static final int activity_main=0x7f0a0000;
-        public static final int context_menu=0x7f0a0001;
-        public static final int contextmenu_browse=0x7f0a0002;
-        public static final int contextmenu_manage=0x7f0a0003;
-        public static final int drawer_list_item=0x7f0a0004;
-        public static final int fragment_community=0x7f0a0005;
-        public static final int fragment_find_people=0x7f0a0006;
-        public static final int fragment_home=0x7f0a0007;
-        public static final int fragment_pages=0x7f0a0008;
-        public static final int fragment_photos=0x7f0a0009;
-        public static final int fragment_whats_hot=0x7f0a000a;
-        public static final int main=0x7f0a000b;
+        public static final int context_menu=0x7f0a0000;
+        public static final int contextmenu_browse=0x7f0a0001;
+        public static final int contextmenu_manage=0x7f0a0002;
+        public static final int drawer_list_item=0x7f0a0003;
+        public static final int fragment_community=0x7f0a0004;
+        public static final int fragment_find_people=0x7f0a0005;
+        public static final int fragment_home=0x7f0a0006;
+        public static final int fragment_pages=0x7f0a0007;
+        public static final int fragment_photos=0x7f0a0008;
+        public static final int fragment_whats_hot=0x7f0a0009;
+        public static final int main=0x7f0a000a;
+        public static final int main_activity_actions=0x7f0a000b;
         public static final int options_menu=0x7f0a000c;
         public static final int sign_to_list_menu=0x7f0a000d;
     }
@@ -298,20 +303,25 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int delete_repeating=0x7f080012;
         /**  Content Description 
          */
-        public static final int desc_list_item_icon=0x7f080018;
+        public static final int desc_list_item_icon=0x7f08001b;
         public static final int done=0x7f08000a;
         public static final int drawer_close=0x7f080017;
         public static final int drawer_open=0x7f080016;
         public static final int edit=0x7f08000d;
         public static final int go=0x7f08000c;
         public static final int hello_world=0x7f080015;
+        /**  action bar right menu item 
+         */
+        public static final int help=0x7f080018;
         public static final int lock=0x7f08000f;
         public static final int manage=0x7f080002;
+        public static final int more=0x7f08001a;
         public static final int new_item=0x7f080004;
         public static final int no_data=0x7f080001;
         public static final int note=0x7f080007;
         public static final int setreminder=0x7f080011;
         public static final int settings=0x7f080006;
+        public static final int share=0x7f080019;
         public static final int snapshot=0x7f080009;
         public static final int sort=0x7f080005;
         public static final int title=0x7f08000b;

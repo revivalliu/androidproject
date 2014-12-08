@@ -4,7 +4,7 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19" />
+    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="18" />
     
     <!--uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" /-->
@@ -20,8 +20,7 @@
         android:name="com.yichen.procrasinationX.SmartPad"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        
-        android:theme="@style/app_theme">
+        android:theme="@android:style/Theme.Holo">
         <activity
             android:name="com.yichen.procrasinationX.login.LoginActivity"
             android:label="@string/app_name" >
