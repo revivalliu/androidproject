@@ -18,6 +18,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -38,8 +39,10 @@ public class BrowseActivity extends Activity implements AdapterView.OnItemClickL
 	
 	private ListView noteList;
 	private TextView emptyView;
-	private ImageButton newBtn;
-	private ImageButton sortBtn;	
+	private Button newBtn;
+	private Button newBtn0;
+	private Button newBtn1;
+	private Button sortBtn;	
 	
 	private SQLiteDatabase db;
 	
@@ -165,8 +168,10 @@ public class BrowseActivity extends Activity implements AdapterView.OnItemClickL
 	private void findViews() {
 		noteList = (ListView) findViewById(R.id.note_list);
 		emptyView = (TextView) findViewById(android.R.id.empty);
-		newBtn = (ImageButton) findViewById(R.id.new_btn);
-		sortBtn = (ImageButton) findViewById(R.id.sort_btn);
+		newBtn = (Button) findViewById(R.id.new_btn);
+		newBtn0 = (Button) findViewById(R.id.clist_btn);
+		newBtn1 = (Button) findViewById(R.id.conf_btn);
+		sortBtn = (Button) findViewById(R.id.sort_btn);
 	}
 
 	@Override
@@ -207,6 +212,15 @@ public class BrowseActivity extends Activity implements AdapterView.OnItemClickL
 			
 		case R.id.sort_btn:
 			sortBtnDialog.show();
+			break;
+		case R.id.clist_btn:
+			Intent intent = new Intent(BrowseActivity.this, ChecklistActivity.class);   
+			startActivity(intent);
+			break;
+		case R.id.conf_btn:
+			Intent intentc = new Intent(BrowseActivity.this, SettingsActivity.class);   
+			startActivity(intentc);
+			//sortBtnDialog.show();
 			break;
 		}
 	}

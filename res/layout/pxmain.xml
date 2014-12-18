@@ -25,8 +25,9 @@
                 android:id="@android:id/tabcontent"
                 android:layout_width="fill_parent"
                 android:layout_height="0dip"
-                android:background="@drawable/pad_bg_repeat"
-                android:layout_weight="1" >
+                android:layout_weight="1"
+                android:background="@drawable/pxbg" >
+
             </FrameLayout>
         </LinearLayout>
     </TabHost>

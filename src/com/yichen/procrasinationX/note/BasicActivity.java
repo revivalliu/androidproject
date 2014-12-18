@@ -6,10 +6,7 @@ import android.view.View;
 
 import com.yichen.procrasinationX.model.Note;
 
-/**
- * @author appsrox.com
- *
- */
+
 public class BasicActivity extends BaseActivity {
 	
 	//private static final String TAG = "BasicActivity";

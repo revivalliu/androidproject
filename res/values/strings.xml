@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ProcrasinationX</string>
+    <string name="app_name">ProcrastinationX</string>
     
     <string name="no_data">No data</string>
     
-    <string name="manage">Manage</string>
-    <string name="browse">Browse</string>
+    <string name="manage">FolderView</string>
+    <string name="browse">Notes</string>
+    <string name="doodle">Doodle</string>
     
     <string name="new_item">New</string>
     <string name="sort">Sort</string>
@@ -15,6 +16,10 @@
     <string name="note">Note</string>
     <string name="checklist">Checklist</string>
     <string name="snapshot">Snapshot</string>
+   <string name="audiomemo">AudioMemo</string>
+   <string name="countdown">CountDown</string>
+   <string name="helpcontent">Please visit px.com/help for more information. Need more help with Navigation or Login, please visit px.com. - </string>
+    
     
     <string name="done">Done</string>
     <string name="title">Title</string>
@@ -35,8 +40,23 @@
     <string name="drawer_close">Slider Menu Closed</string>
     <!-- action bar right menu item -->
     <string name="help">Help</string>
+    <string name="location">Location</string>
     <string name="share">Share</string>
     <string name="more">More</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Search</string>
+     <string name="details_alarm_name">Alarm Name</string>
+	<string name="details_repeat_weekly">Repeat Weekly</string>
+	<string name="details_sunday">Sunday</string>
+	<string name="details_monday">Monday</string>
+	<string name="details_tuesday">Tuesday</string>
+	<string name="details_wednesday">Wednesday</string>
+	<string name="details_thursday">Thursday</string>
+	<string name="details_friday">Friday</string>
+	<string name="details_saturday">Saturday</string>
+	<string name="details_alarm_tone">Alarm Tone</string>
+	<string name="details_alarm_tone_default">Select an alarm tone</string>
+    
     
     <!-- Nav Drawer Menu Items -->
     <string-array name="nav_drawer_items">

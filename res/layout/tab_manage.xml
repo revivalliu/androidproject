@@ -34,22 +34,42 @@
         android:gravity="center"
         android:padding="5dip"
         android:background="@drawable/bar_bg_repeat" >
-	    <ImageButton
+        <Button
+	        android:id="@+id/new_btn0"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="onClick"
+	        android:layout_marginRight="4dip"
+	        android:text="Move"
+	        android:background="@drawable/btn_bg"
+	        android:drawableLeft="@drawable/new_archive" />
+	    <Button
 	        android:id="@+id/new_btn"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:onClick="onClick"
-	        android:layout_marginRight="7dip"
+	        android:layout_marginRight="4dip"
+	        android:text="New"
 	        android:background="@drawable/btn_bg"
-	        android:src="@drawable/new_archive" />
-	    <ImageButton
+	        android:drawableLeft="@drawable/new_archive" />
+	    <Button
 	        android:id="@+id/settings_btn"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:onClick="onClick"
-	        android:layout_marginLeft="7dip"
+	        android:layout_marginRight="4dip"
+	        android:text="Conf"
 	        android:background="@drawable/btn_bg"
-	        android:src="@drawable/preferences" />
+	        android:drawableLeft="@drawable/preferences" />
+	    <Button
+	        android:id="@+id/new_btn1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:onClick="onClick"
+	        android:layout_marginRight="4dip"
+	        android:text="Help"
+	        android:background="@drawable/btn_bg"
+	        android:drawableLeft="@drawable/new_archive" />
     </LinearLayout>    
 
 </LinearLayout>

@@ -13,10 +13,7 @@ import com.yichen.procrasinationX.model.CheckItem;
 import com.yichen.procrasinationX.model.Note;
 import com.yichen.procrasinationX.R;
 
-/**
- * @author appsrox.com
- *
- */
+
 public class ChecklistActivity extends BaseActivity {
 	
 	//private static final String TAG = "ChecklistActivity";

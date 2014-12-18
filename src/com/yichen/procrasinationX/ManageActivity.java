@@ -15,6 +15,7 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnChildClickListener;
@@ -27,7 +28,8 @@ import android.widget.Toast;
 import com.yichen.procrasinationX.login.LoginActivity;
 import com.yichen.procrasinationX.model.Category;
 import com.yichen.procrasinationX.model.Note;
-import com.yichen.procrasinationX.reminder.AddAlarmActivity;
+import com.yichen.procrasinationX.remindme.ReminderMainActivity;
+//import com.yichen.procrasinationX.reminder.AddAlarmActivity;
 import com.yichen.procrasinationX.R;
 
 public class ManageActivity extends ExpandableListActivity {
@@ -37,8 +39,10 @@ public class ManageActivity extends ExpandableListActivity {
 	public static final int DIALOG_NEW_CATEGORY = 1;
 	public static final int DIALOG_RENAME_CATEGORY = 2;
 	
-	private ImageButton newBtn;
-	private ImageButton settingsBtn;
+	private Button newBtn;
+	private Button settingsBtn;
+	private Button newBtn0;
+	private Button newBtn1;
 	
 	private EditText categoryNameEdit;
 	private AlertDialog categoryDialog;
@@ -112,8 +116,10 @@ public class ManageActivity extends ExpandableListActivity {
 	}
 	
 	private void findViews() {
-		newBtn = (ImageButton) findViewById(R.id.new_btn);
-		settingsBtn = (ImageButton) findViewById(R.id.settings_btn);
+		newBtn = (Button) findViewById(R.id.new_btn);
+		newBtn0 = (Button) findViewById(R.id.new_btn0);
+		newBtn1 = (Button) findViewById(R.id.new_btn1);
+		settingsBtn = (Button) findViewById(R.id.settings_btn);
 	}
 	
 	public void onClick(View v) {
@@ -198,7 +204,7 @@ public class ManageActivity extends ExpandableListActivity {
 					menu.removeItem(R.id.menu_unlock);
 				
 				if (info.id == SmartPad.PUBLIC_CATEGORYID) {
-					menu.removeItem(R.id.menu_setReminder);
+					
 					menu.removeItem(R.id.menu_delete);
 					menu.removeItem(R.id.menu_edit);
 				}
@@ -222,17 +228,17 @@ public class ManageActivity extends ExpandableListActivity {
 
 		boolean refresh = false;
 		switch (item.getItemId()) {
-		case R.id.menu_edit:
-			if (type == ExpandableListView.PACKED_POSITION_TYPE_CHILD) {
-				BrowseActivity.openNote(info.id, this);
+		//case R.id.menu_edit:
+		//	if (type == ExpandableListView.PACKED_POSITION_TYPE_CHILD) {
+		//		BrowseActivity.openNote(info.id, this);
 				
-			} else if (type == ExpandableListView.PACKED_POSITION_TYPE_GROUP) {
-				category.load(db);
-				categoryNameEdit.setText(category.getName());
+		//	} else if (type == ExpandableListView.PACKED_POSITION_TYPE_GROUP) {
+		//		category.load(db);
+		//		categoryNameEdit.setText(category.getName());
 				
-				showDialog(DIALOG_RENAME_CATEGORY);
-			}
-			break;
+		//		showDialog(DIALOG_RENAME_CATEGORY);
+		//	}
+		//	break;
 
 		case R.id.menu_delete:
 			if (type == ExpandableListView.PACKED_POSITION_TYPE_CHILD) {
@@ -242,11 +248,6 @@ public class ManageActivity extends ExpandableListActivity {
 		    	category.delete(db);
 			}			
 			refresh = true;
-			break;
-		case R.id.menu_setReminder:
-			Intent intent = new Intent(ManageActivity.this, AddAlarmActivity.class);
-	        startActivity(intent);
-	        refresh = true;
 			break;
 			
 		case R.id.menu_lock:

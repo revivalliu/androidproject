@@ -84,7 +84,7 @@
 			    android:layout_gravity="right"
 			    android:layout_marginBottom="5dip"
 			    android:onClick="onClick"
-			    android:background="@drawable/btn_bg_selector"
+			    android:background="@drawable/ic_action_new"
 			    android:src="@drawable/add" />
 			
 		    <Gallery

@@ -5,10 +5,7 @@ import com.yichen.procrasinationX.R;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
-/**
- * @author appsrox.com
- *
- */
+
 public class SettingsActivity extends PreferenceActivity {
 	
 	//private static final String TAG = "SettingsActivity";

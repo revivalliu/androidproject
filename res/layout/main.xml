@@ -2,16 +2,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="@drawable/sunflower"
+    android:background="@drawable/px_clock"
     android:gravity="center_vertical"
     android:orientation="vertical" >
 
     <Button
         android:id="@+id/buttonSignIN"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-         android:text="Sign In" 
-         android:onClick="signIn"/>
+        android:layout_height="42dp"
+        android:onClick="signIn"
+        android:text="Sign In" />
 
     <Button
         android:id="@+id/buttonSignUp"

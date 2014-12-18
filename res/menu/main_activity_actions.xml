@@ -1,20 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:id="@+id/search"
+          android:title="@string/search"
+          android:icon="@drawable/ic_action_search2"
+          android:showAsAction="collapseActionView|ifRoom"
+          android:actionViewClass="android.widget.SearchView" />
+
     <item android:id="@+id/snapshot"
-          android:icon="@drawable/smile"
+          android:icon="@drawable/ic_action_camera"
           android:title="@string/snapshot"
     		  android:showAsAction="ifRoom"/>
+    
+    <item android:id="@+id/audio"
+          android:icon="@drawable/ic_action_mic"
+          android:title="@string/audiomemo"
+    		  android:showAsAction="ifRoom"/>
+    
     <item android:id="@+id/settings"
-          android:icon="@drawable/ic_pages"
+          android:icon="@drawable/ic_action_settings"
           android:title="@string/settings" />
     <item 
+              android:id="@+id/countdown" 
+              android:icon = "@drawable/ic_action_help"
+              android:title="@string/countdown" 
+              android:showAsAction="ifRoom" />
+    <item 
               android:id="@+id/help" 
-              android:icon = "@drawable/ic_communities"
+              android:icon = "@drawable/ic_action_help"
               android:title="@string/help" 
+              android:showAsAction="ifRoom" />
+    <item 
+              android:id="@+id/location" 
+              android:icon = "@drawable/ic_action_place"
+              android:title="@string/location" 
               android:showAsAction="ifRoom" />
        <item 
               android:id="@+id/share" 
-              android:icon = "@drawable/ic_people"
+              android:icon = "@drawable/ic_action_share"
               android:title="@string/share" 
               android:showAsAction="ifRoom" />
               
@@ -23,5 +46,6 @@
               android:icon = "@drawable/ic_whats_hot"
               android:title="@string/more" 
               android:showAsAction="ifRoom" />
+        
     
 </menu>

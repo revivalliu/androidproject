@@ -21,10 +21,7 @@ import com.yichen.procrasinationX.model.Category;
 import com.yichen.procrasinationX.model.Note;
 import com.yichen.procrasinationX.R;
 
-/**
- * @author appsrox.com
- *
- */
+
 abstract class BaseActivity extends Activity {
 	
 	//private static final String TAG = "BaseActivity";

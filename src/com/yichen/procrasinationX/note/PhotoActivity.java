@@ -12,10 +12,7 @@ import com.yichen.procrasinationX.SmartPad;
 import com.yichen.procrasinationX.model.Attachment;
 import com.yichen.procrasinationX.R;
 
-/**
- * @author appsrox.com
- *
- */
+
 public class PhotoActivity extends Activity {
 	
 	//private static final String TAG = "PhotoActivity";

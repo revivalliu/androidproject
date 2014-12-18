@@ -46,7 +46,7 @@ public class LoginActivity extends Activity
 	        toast.setView(toastRoot);
 	        toast.setGravity(Gravity.BOTTOM,//CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL,
 	                0, 0);
-	        toast.setDuration(Toast.LENGTH_LONG);
+	        toast.setDuration(Toast.LENGTH_SHORT);
 	        toast.show();
 	       
 	     //----

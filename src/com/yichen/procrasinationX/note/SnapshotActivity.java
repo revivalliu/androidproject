@@ -30,10 +30,7 @@ import com.yichen.procrasinationX.model.Attachment;
 import com.yichen.procrasinationX.model.Note;
 import com.yichen.procrasinationX.R;
 
-/**
- * @author appsrox.com
- *
- */
+
 public class SnapshotActivity extends BaseActivity implements AdapterView.OnItemClickListener {
 	
 	//private static final String TAG = "SnapshotActivity";
@@ -48,7 +45,7 @@ public class SnapshotActivity extends BaseActivity implements AdapterView.OnItem
         note.setType(Note.SNAPSHOT);
         
 		gallery.setOnItemClickListener(this);
-		addItemBtn.setImageResource(R.drawable.ksnapshot);
+		addItemBtn.setImageResource(R.drawable.cameraicon);
     }
     
 	@Override
@@ -57,6 +54,8 @@ public class SnapshotActivity extends BaseActivity implements AdapterView.OnItem
 		intent.setClass(this, PhotoActivity.class);
 		intent.putExtra(Attachment.COL_ID, id);
 		startActivity(intent);
+		
+	    
 	}    
 	
 	public void onClick(View v) {
@@ -71,14 +70,17 @@ public class SnapshotActivity extends BaseActivity implements AdapterView.OnItem
 				intent.putExtra(MediaStore.EXTRA_OUTPUT, tempImageUri);                	
                 startActivityForResult(intent, TAKE_SNAPSHOT);
                 
+                
             } catch (ActivityNotFoundException e) {
                 Toast.makeText(getApplicationContext(), "No camera app found!", Toast.LENGTH_LONG).show();
             } catch (IOException e) {
             	Toast.makeText(getApplicationContext(), "Unable to write file on internal storage", Toast.LENGTH_LONG).show();
 			}
+            Toast.makeText(SnapshotActivity.this,"Take one more?", Toast.LENGTH_SHORT).show();
 			break;
 			
 		case R.id.deleteitem_btn:
+			Toast.makeText(SnapshotActivity.this,"Warning: item is going to be deleted!", Toast.LENGTH_LONG).show();
 			break;			
 		}
 	}
