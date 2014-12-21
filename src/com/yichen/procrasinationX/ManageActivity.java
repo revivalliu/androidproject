@@ -24,12 +24,9 @@ import android.widget.ImageButton;
 import android.widget.SimpleCursorTreeAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.yichen.procrasinationX.login.LoginActivity;
 import com.yichen.procrasinationX.model.Category;
 import com.yichen.procrasinationX.model.Note;
-import com.yichen.procrasinationX.remindme.ReminderMainActivity;
-//import com.yichen.procrasinationX.reminder.AddAlarmActivity;
 import com.yichen.procrasinationX.R;
 
 public class ManageActivity extends ExpandableListActivity {

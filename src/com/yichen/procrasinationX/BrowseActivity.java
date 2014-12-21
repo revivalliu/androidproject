@@ -28,6 +28,8 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 import com.yichen.procrasinationX.R;
+import com.yichen.procrasinationX.alarmclock.AlarmDetailsActivity;
+import com.yichen.procrasinationX.alarmclock.AlarmListActivity;
 import com.yichen.procrasinationX.model.Category;
 import com.yichen.procrasinationX.model.Note;
 import com.yichen.procrasinationX.note.BasicActivity;
@@ -217,7 +219,6 @@ public class BrowseActivity extends Activity implements AdapterView.OnItemClickL
 			newBtnDialog.show();
 			
 			break;
-			
 		case R.id.sort_btn:
 			sortBtnDialog.show();
 			break;

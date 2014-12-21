@@ -47,7 +47,19 @@
         <item 
               android:id="@+id/others" 
               android:icon = "@drawable/ic_whats_hot"
-              android:title="@string/more" 
+              android:title="Voice Recognition" 
+              android:showAsAction="ifRoom" />
+        
+        <item 
+              android:id="@+id/doodleNote" 
+              android:icon = "@drawable/pencil"
+              android:title="Doodle note" 
+              android:showAsAction="ifRoom" />
+        
+        <item 
+              android:id="@+id/setAlarm" 
+              android:icon = "@drawable/ic_whats_hot"
+              android:title="Set Alarm" 
               android:showAsAction="ifRoom" />
         
     

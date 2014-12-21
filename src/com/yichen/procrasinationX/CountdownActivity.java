@@ -3,6 +3,9 @@ package com.yichen.procrasinationX;
 import java.util.concurrent.TimeUnit;
 
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -12,7 +15,9 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.BounceInterpolator;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -32,7 +37,7 @@ public class CountdownActivity extends Activity {
 		        btn = (Button)findViewById(R.id.btnBackhome);
 		        textViewTime  = (TextView)findViewById(R.id.textViewTime);
 		        textViewTime.setText("00:3:00"); 
-		 
+		        
 		        final CounterClass timer = new CounterClass(180000,1000);
 		        btnStart.setOnClickListener(new OnClickListener() {
 		            @Override
@@ -83,6 +88,7 @@ public class CountdownActivity extends Activity {
 				    
 				    textViewTime.setText(hms);
 			}
+			
 		}
 	}
 	

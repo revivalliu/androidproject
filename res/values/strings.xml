@@ -16,9 +16,9 @@
     <string name="note">Note</string>
     <string name="checklist">Checklist</string>
     <string name="snapshot">Snapshot</string>
-   <string name="audiomemo">AudioMemo</string>
-   <string name="countdown">CountDown</string>
-   <string name="helpcontent">Please visit px.com/help for more information. Need more help with Navigation or Login, please visit px.com. - </string>
+   <string name="audiomemo">Audio Memo</string>
+   <string name="countdown">Count Down</string>
+   <string name="helpcontent">Please visit yichen.ProcrastinationX.com/help for more information. For help with Navigation or Login, please visit yichen.ProcrastinationX.com/nav. - </string>
     
     
     <string name="done">Done</string>
@@ -40,7 +40,7 @@
     <string name="drawer_close">Slider Menu Closed</string>
     <!-- action bar right menu item -->
     <string name="help">Help</string>
-    <string name="location">Location</string>
+    <string name="location">Location Reminder</string>
     <string name="share">Share</string>
     <string name="more">More</string>
     <string name="search">Search</string>
@@ -81,5 +81,31 @@
     
     <!-- Content Description -->
     <string name="desc_list_item_icon">Item Icon</string>
+    
+    <!-- alarm manager -->
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_alarm_manager">AlarmManagerExample</string>
+	<string name="btCancel">Cancel Repeating Timer</string>
+	<string name="btStart">Start Repeating Timer</string>
+	<string name="btOneTime">One-time Timer</string>
+    
+	<!-- voice to test -->
+    <string name="btSpeak">Speak</string>
+    <string name="title_activity_voice_recognition">Voice Recognition</string>
+    <string name="tvTextMatches">Text Matches</string>
+    <string name="sNoOfMatches">No of Matches</string>
+    <string name="etSearchHint">Speech hint here</string>
+    <string-array name="saNoOfMatches">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
     
 </resources>

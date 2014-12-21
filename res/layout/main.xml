@@ -1,15 +1,18 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:background="@drawable/px_clock"
     android:gravity="center_vertical"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    tools:context="${relativePackage}.${activityClass}" 
+     >
 
     <Button
         android:id="@+id/buttonSignIN"
         android:layout_width="fill_parent"
-        android:layout_height="42dp"
+        android:layout_height="wrap_content"
         android:onClick="signIn"
         android:text="Sign In" />
 
@@ -17,6 +20,13 @@
         android:id="@+id/buttonSignUp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Sign Up" />
-
-</LinearLayout>
+        android:text="Sign Up" 
+        android:layout_below="@+id/buttonSignIN"/>
+    
+   <com.yichen.procrasinationX.animation.MyImageView
+        android:id="@+id/clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/clock" ></com.yichen.procrasinationX.animation.MyImageView>
+   
+</RelativeLayout>

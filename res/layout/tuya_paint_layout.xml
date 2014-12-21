@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+<TabHost android:id="@android:id/tabhost" android:layout_width="fill_parent"
+	android:layout_height="fill_parent" >
+	<RelativeLayout
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		>
+		<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+        android:background="@drawable/tuya_ao_tab_bg"></LinearLayout>
+        
+		<TabWidget android:id="@android:id/tabs"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content"
+            android:background="#00ff0000"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
+            android:layout_marginTop="4.67dip"
+			></TabWidget>
+	<ImageView  
+	android:id="@+id/bgtiao"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:background="@drawable/tuya_bgtiao"
+    android:layout_below="@android:id/tabs"
+    />
+		<FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/bgtiao"/>
+            
+	</RelativeLayout>
+</TabHost>
+
+</LinearLayout>

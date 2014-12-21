@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/px_clock"
@@ -7,7 +8,10 @@
     android:focusableInTouchMode="true"
     android:orientation="vertical"
     android:scrollbarAlwaysDrawVerticalTrack="true"
-    android:tag="Count down" >
+    android:tag="Count down" 
+ >
+ 
+    
     
     <TextView
         android:id="@+id/textViewTime"
@@ -43,6 +47,7 @@
         android:layout_alignBottom="@+id/btnStop"
         android:layout_toLeftOf="@+id/btnBackhome"
         android:text="Start" />
+    
 
 </RelativeLayout>
 

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+<FrameLayout
+  
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content"
+  android:layout_alignParentTop="true"
+  android:layout_marginBottom="46.67dip"
+  android:id="@+id/finger_layout"  
+  >
+  
+  <com.yichen.procrasinationX.paint.view.FingerEditText    
+	  	android:id="@+id/fingerEditText"  
+	    android:layout_width="fill_parent"   
+	    android:layout_height="wrap_content"   
+	    android:background="#C9DDFE" 
+	    android:textColor="#000000"
+	    android:textSize="50dip" 
+	    android:lines="40"
+	    android:focusable="true"
+	    android:focusableInTouchMode="true"
+	    android:gravity="top|left" 
+	    android:lineSpacingExtra="5dip"  
+	    android:paddingTop="3dip"
+  		android:paddingBottom="3dip"
+	    
+	    />
+	     <!-- android:gravity="top|left" 
+	     android:layout_gravity="center_vertical|top"
+	     
+	     android:paddingTop="3dip"
+    	android:paddingBottom="3dip"
+    	android:gravity="top|left" 
+	     -->
+    <com.yichen.procrasinationX.paint.view.FingerView
+	    android:id="@+id/fingerView"     
+	    android:layout_width="fill_parent"      
+	    android:layout_height="wrap_content" 
+	    android:background="@android:color/transparent"
+	 />
+    
+    
+	 
+</FrameLayout>
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+	android:id="@+id/ScrollView01"
+    android:visibility="invisible"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="46.67dip"
+    >
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    >
+    <Button  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="Color Panel"
+    android:layout_weight="1"
+    android:background="@drawable/tuya_selectedtrue"
+    android:textColor="#606060"
+    android:textSize="16.67dip"
+    />
+    <Button  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text=""
+    android:layout_weight="1"
+    android:background="@drawable/tuya_selectedfalse"
+    />
+    </LinearLayout>
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#c5d0d5"
+    >
+<RelativeLayout
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="7.33dip"
+    android:layout_marginBottom="12dip"
+    >
+<ImageView  
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content" 
+    android:background="@drawable/tuya_toleft"
+    android:layout_centerVertical="true"
+    android:layout_marginLeft="6.67dip"
+    android:id="@+id/imageviewleft"
+    />
+    <ImageView  
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content" 
+    android:background="@drawable/tuya_toright"
+    android:layout_centerVertical="true"
+    android:layout_alignParentRight="true"
+    android:layout_marginRight="6.67dip"
+    android:id="@+id/imageviewright"
+    />
+   <include layout="@layout/tuya_colourlayout"/>  
+    </RelativeLayout>
+    </LinearLayout>
+
+    </LinearLayout>
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/tuya_bgbottominit"
+    android:layout_alignParentBottom="true"
+    android:id="@+id/linearlayout"
+    >
+    
+    <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    >
+    <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="wrap_content" 
+    android:layout_height="match_parent" 
+	android:layout_weight="1"
+    >
+    <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+	android:layout_gravity="bottom"
+    >
+     <Button  
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content" 
+    android:id="@+id/colour"
+    android:background="@drawable/tuya_colorselector"
+	android:layout_gravity="center_horizontal"
+    />
+    </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="wrap_content" 
+    android:layout_height="match_parent" 
+	android:layout_weight="1"
+    >
+    <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+	android:layout_gravity="bottom"
+    >
+    <Button  
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content" 
+    android:id="@+id/sendbutton"
+    android:background="@drawable/tuya_sendbutton"
+	android:layout_gravity="center_horizontal"
+	android:onClick="onClick"
+    />
+    </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="wrap_content" 
+    android:layout_height="match_parent" 
+	android:layout_weight="1"
+    >
+    <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+	android:layout_gravity="bottom"
+    >
+    <Button  
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content" 
+	android:id="@+id/button_delete" 
+    android:background="@drawable/tuya_eraserbutton"
+	android:layout_gravity="center_horizontal"
+	android:onClick="onClick"
+    />
+    </LinearLayout>
+    </LinearLayout>
+  
+    
+</LinearLayout>
+</LinearLayout>
+
+
+
+<LinearLayout
+		android:orientation="horizontal" 
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/layout_bottom" 
+		android:layout_above="@id/ScrollView01"
+		android:visibility="gone"
+		>
+		<!-- <Button 
+			android:text="删除" 
+			android:id="@+id/button_delete" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom"
+			android:onClick="onClick"
+		/>
+		<Button 
+			android:text="涂鸦" 
+			android:id="@+id/button_opentuya" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom"
+			android:onClick="onClick"
+		/> -->
+		
+</LinearLayout>
+
+</RelativeLayout>

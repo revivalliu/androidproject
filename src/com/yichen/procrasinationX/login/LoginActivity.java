@@ -3,6 +3,9 @@ package com.yichen.procrasinationX.login;
 import com.yichen.procrasinationX.MainActivity;
 import com.yichen.procrasinationX.R;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -14,11 +17,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 //--
 import android.content.Context;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.animation.BounceInterpolator;
 
 //--
 
@@ -26,7 +31,7 @@ public class LoginActivity extends Activity
 {
 	Button btnSignIn,btnSignUp;
 	LoginDataBaseAdapter loginDataBaseAdapter;
-	
+    
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
@@ -48,8 +53,10 @@ public class LoginActivity extends Activity
 	                0, 0);
 	        toast.setDuration(Toast.LENGTH_SHORT);
 	        toast.show();
-	       
-	     //----
+	        ImageView ball = (ImageView) this.findViewById(R.id.clock);
+	        AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.bounce);
+	        set.setTarget(ball);
+	        set.start();
 	     
 	     // create a instance of SQLite Database
 	     loginDataBaseAdapter=new LoginDataBaseAdapter(this);
@@ -113,6 +120,15 @@ public class LoginActivity extends Activity
 			
 			dialog.show();
 	}
+	
+	private void animateViaAPI(ImageView ball) {
+        ObjectAnimator animX = ObjectAnimator.ofFloat(ball, "xFraction", 0f, 1f).setDuration(5000);
+        ObjectAnimator animY = ObjectAnimator.ofFloat(ball, "yFraction", 0f, 1f).setDuration(5000);
+        animY.setInterpolator(new BounceInterpolator());
+        AnimatorSet set = new AnimatorSet();
+        set.play(animX).with(animY);
+        set.start();
+    }
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {  //to show the menu
         super.onCreateOptionsMenu(menu); //First call super

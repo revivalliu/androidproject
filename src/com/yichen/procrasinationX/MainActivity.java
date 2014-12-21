@@ -7,8 +7,12 @@ import org.apache.http.protocol.HTTP;
 
 import com.yichen.procrasinationX.R;
 import com.yichen.procrasinationX.R.string;
+import com.yichen.procrasinationX.alarmclock.AlarmListActivity;
+import com.yichen.procrasinationX.alarmmanager.AlarmManagerActivity;
 import com.yichen.procrasinationX.note.SnapshotActivity;
-import com.yichen.procrasinationX.remindme.ReminderMainActivity;
+import com.yichen.procrasinationX.paint.FingerActivity;
+
+import com.yichen.procrasinationX.voicerecognition.VoiceRecognitionActivity;
 
 
 import android.app.SearchManager;
@@ -22,6 +26,7 @@ import android.content.res.Resources;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.AlarmClock;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -66,13 +71,6 @@ public class MainActivity extends TabActivity implements OnTabChangeListener {
         intent = new Intent().setClass(this, ManageActivity.class);
         spec = tabHost.newTabSpec(TAB_MANAGE).setIndicator(createTabIndicator(res.getString(R.string.manage))).setContent(intent);
         tabHost.addTab(spec);  
-        
-        //--reserved for doodle tab, create xml and update string and manifest file
-        /*
-        intent = new Intent().setClass(this, FingerActivity.class);
-        spec = tabHost.newTabSpec(TAB_Doodle).setIndicator(createTabIndicator(res.getString(R.string.doodle))).setContent(intent);
-        tabHost.addTab(spec); 
-        */
   
     }
     
@@ -146,13 +144,13 @@ public class MainActivity extends TabActivity implements OnTabChangeListener {
 						
 			            return true;
 			        case R.id.settings:
-				        //	opensnap();
-//				        	intent = new Intent(MainActivity.this, ReminderMainActivity.class);   
-//						startActivity(intent); 
-						final Intent intentDeviceTest = new Intent("android.intent.action.MAIN"); //intent or view               
-						intentDeviceTest.setComponent(new ComponentName("com.yichen.procrasinationX","com.yichen.procrasinationX.remindme.ReminderMainActivity"));
-						startActivity(intentDeviceTest);
-							
+				        
+				        	intent = new Intent(MainActivity.this, SettingsActivity.class);   
+						startActivity(intent); 
+//						final Intent intentDeviceTest = new Intent("android.intent.action.MAIN"); //intent or view               
+//						intentDeviceTest.setComponent(new ComponentName("com.yichen.procrasinationX","com.yichen.procrasinationX.remindme.ReminderMainActivity"));
+//						startActivity(intentDeviceTest);
+//							
 				        return true;
 				        
 			        case R.id.countdown:
@@ -166,30 +164,13 @@ public class MainActivity extends TabActivity implements OnTabChangeListener {
 				        return true;
 				        
 			        case R.id.help:
-			        //	double lap= Location.getLatitude();
-			        	//double ltd= Location.getLongitude();
-			        	//Uri location = Uri.parse("geo:"+lap, +ltd);
-			        Uri location = Uri.parse("geo:0,0?q=1600+Holloway+Avenue,+San+Francisco,+California");
-			        	Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
-			        
+			        	intent = new Intent(MainActivity.this, Help.class);   
+						startActivity(intent); 
 
-			        	// Verify it resolves
-			        	PackageManager packageManager = getPackageManager();
-			        	List<ResolveInfo> activities = packageManager.queryIntentActivities(mapIntent, 0);
-			        	boolean isIntentSafe = activities.size() > 0;
-
-			        	// Start an activity if it's safe
-			        	if (isIntentSafe) {
-			        	    startActivity(mapIntent);
-			        	}
-							
 				        return true;  
 			        case R.id.location:
 			        	Uri locations = Uri.parse("geo:0,0?q=1600+Holloway+Avenue,+San+Francisco,+California");
 			        	Intent mapIntents = new Intent(Intent.ACTION_VIEW, locations);
-			       
-				        
-			
 
 			        	// Verify it resolves
 			        	PackageManager packageManagers = getPackageManager();
@@ -202,8 +183,27 @@ public class MainActivity extends TabActivity implements OnTabChangeListener {
 			        	}
 							
 				        return true;  
-
+			        case R.id.others:
+			        		//intent = new Intent(MainActivity.this, FingerActivity.class);
+			        	//VoiceRecognitionActivity, AlarmManagerActivity
+			        		intent = new Intent(MainActivity.this, VoiceRecognitionActivity.class);
+						startActivity(intent); 
+			        		return true;
+					   
+			        case R.id.doodleNote:
+			        	intent = new Intent(MainActivity.this, FingerActivity.class);
+						startActivity(intent); 
+			        		return true;
+			        		
+			        case R.id.setAlarm:	
 			        	
+//			        	intent = new Intent(MainActivity.this, AlarmManagerActivity.class);
+//					startActivity(intent); 
+//					
+			        		intent = new Intent(MainActivity.this, AlarmListActivity.class);   
+						startActivity(intent);
+	        		    		return true;			        				      
+	
 			        default:
 			            return super.onOptionsItemSelected(item);
 			    }

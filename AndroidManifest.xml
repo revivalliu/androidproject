@@ -25,7 +25,7 @@
 
     <application
         android:name="com.yichen.procrasinationX.SmartPad"
-        android:icon="@drawable/clock_launcher"
+        android:icon="@drawable/clock"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo">
         <activity
@@ -36,15 +36,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.yichen.procrasinationX.alarmclock.AlarmListActivity"   />
-        
-        <activity android:name="com.yichen.procrasinationX.alarmclock.AlarmScreen" />
-        
-        <activity android:name="com.yichen.procrasinationX.alarmclock.AlarmDetailsActivity" />
-
-        <service android:name="com.yichen.procrasinationX.alarmclock.AlarmService" 
-            android:enabled="true"/>
+  
         
         <receiver android:name="com.yichen.procrasinationX.alarmclock.AlarmManagerHelper" >
             <intent-filter>
@@ -85,33 +77,24 @@
 		<activity android:name="com.yichen.procrasinationX.note.ChecklistActivity" android:windowSoftInputMode="stateHidden"></activity>
 		<activity android:name="com.yichen.procrasinationX.note.SnapshotActivity" android:windowSoftInputMode="stateHidden"></activity>
 		<activity android:name="com.yichen.procrasinationX.note.PhotoActivity" android:windowSoftInputMode="stateHidden"></activity>
-		<activity
-            android:name="com.yichen.procrasinationX.remindme.ReminderMainActivity"
-            android:label="@string/app_name">
-        		
-        <meta-data android:name="android.support.PARENT_ACTIVITY"
-        android:value=".remindme.ReminderMainActivity">
-    		</meta-data>
+		
+        <activity android:name="com.yichen.procrasinationX.paint.FingerActivity"></activity>
+        <activity android:name="com.yichen.procrasinationX.alarmmanager.AlarmManagerActivity"></activity>
+        <activity android:name="com.yichen.procrasinationX.voicerecognition.VoiceRecognitionActivity"></activity>
+        <activity android:name="com.yichen.procrasinationX.alarmclock.AlarmListActivity" />
+        <activity android:name="com.yichen.procrasinationX.alarmclock.AlarmScreen" />
+        <activity android:name="com.yichen.procrasinationX.alarmclock.AlarmDetailsActivity" />
+
+        <service android:name="com.yichen.procrasinationX.alarmclock.AlarmService" 
+            android:enabled="true"/>
+        
+        <receiver android:name="com.yichen.procrasinationX.alarmclock.AlarmManagerHelper" >
             <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
-    
-        </activity>
-         <activity android:name="com.yichen.procrasinationX.remindme.AddAlarmActivity" android:windowSoftInputMode="stateHidden"></activity>
-        <activity android:name="com.yichen.procrasinationX.remindme.SettingsActivity"></activity>
-  
-        <activity android:name="com.yichen.procrasinationX.slidingmenu.SlidemenuMainActivity"></activity>
-        
-        
-		<receiver android:name="com.yichen.procrasinationX.remindme.AlarmSetter">
-			<intent-filter>
-				<action android:name="android.intent.action.BOOT_COMPLETED" />
-			</intent-filter>
-		</receiver>
-		<receiver android:name="com.yichen.procrasinationX.remindme.AlarmReceiver"></receiver>
-        
-		<service android:name="com.yichen.procrasinationX.remindme.AlarmService"></service>
+        </receiver>
+		
     </application>
-    <application android:name="com.yichen.procrasinationX.remindme.RemindMe"/>
+    
 
 </manifest>
