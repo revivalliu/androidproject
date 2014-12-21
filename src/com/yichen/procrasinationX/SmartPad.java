@@ -27,7 +27,7 @@ public class SmartPad extends Application {
 	public static long LASTCREATED_CATEGORYID;
 	public static long LASTSELECTED_CATEGORYID;
 	
-	//--+ remindme
+	
 	//public static final String TIME_OPTION = "time_option";
 	public static final String DATE_RANGE = "date_range";
 	public static final String DATE_FORMAT = "date_format";

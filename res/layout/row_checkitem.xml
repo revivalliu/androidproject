@@ -26,7 +26,7 @@
         android:layout_weight="1"
         android:background="@null"
         android:ems="10"
-        android:hint="_________________"
+        android:hint=" _________________"
         android:textColor="#587498"
         android:textSize="18sp" >
 

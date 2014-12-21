@@ -149,14 +149,9 @@ public class MainActivity extends TabActivity implements OnTabChangeListener {
 				        //	opensnap();
 //				        	intent = new Intent(MainActivity.this, ReminderMainActivity.class);   
 //						startActivity(intent); 
-			        	/*
 						final Intent intentDeviceTest = new Intent("android.intent.action.MAIN"); //intent or view               
 						intentDeviceTest.setComponent(new ComponentName("com.yichen.procrasinationX","com.yichen.procrasinationX.remindme.ReminderMainActivity"));
 						startActivity(intentDeviceTest);
-						*/
-						
-						intent = new Intent(MainActivity.this, SettingsActivity.class);
-						startActivity(intent);
 							
 				        return true;
 				        
@@ -171,10 +166,24 @@ public class MainActivity extends TabActivity implements OnTabChangeListener {
 				        return true;
 				        
 			        case R.id.help:
-			        	intent = new Intent(MainActivity.this, Help.class);   
-					startActivity(intent); 
-				    return true;
+			        //	double lap= Location.getLatitude();
+			        	//double ltd= Location.getLongitude();
+			        	//Uri location = Uri.parse("geo:"+lap, +ltd);
+			        Uri location = Uri.parse("geo:0,0?q=1600+Holloway+Avenue,+San+Francisco,+California");
+			        	Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
 			        
+
+			        	// Verify it resolves
+			        	PackageManager packageManager = getPackageManager();
+			        	List<ResolveInfo> activities = packageManager.queryIntentActivities(mapIntent, 0);
+			        	boolean isIntentSafe = activities.size() > 0;
+
+			        	// Start an activity if it's safe
+			        	if (isIntentSafe) {
+			        	    startActivity(mapIntent);
+			        	}
+							
+				        return true;  
 			        case R.id.location:
 			        	Uri locations = Uri.parse("geo:0,0?q=1600+Holloway+Avenue,+San+Francisco,+California");
 			        	Intent mapIntents = new Intent(Intent.ACTION_VIEW, locations);

@@ -17,6 +17,7 @@
         android:layout_gravity="left|bottom"
         android:background="@null"
         android:padding="5dip"
+        
         android:src="@drawable/back" />
     
     <ImageButton

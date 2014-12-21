@@ -13,10 +13,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -25,6 +27,7 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
+import com.yichen.procrasinationX.R;
 import com.yichen.procrasinationX.model.Category;
 import com.yichen.procrasinationX.model.Note;
 import com.yichen.procrasinationX.note.BasicActivity;
@@ -102,6 +105,7 @@ public class BrowseActivity extends Activity implements AdapterView.OnItemClickL
         findViews();
         db = SmartPad.db;
         
+       
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         
         builder.setTitle("Choose an Option");
@@ -111,7 +115,7 @@ public class BrowseActivity extends Activity implements AdapterView.OnItemClickL
         builder.setTitle("Sort by");
         builder.setItems(R.array.sort_options_arr, dialogListener);
         sortBtnDialog = builder.create();        
-        
+         
         noteList.setOnItemClickListener(this);
         noteList.setEmptyView(emptyView);
         
@@ -153,7 +157,9 @@ public class BrowseActivity extends Activity implements AdapterView.OnItemClickL
 					return true;					
 					
 				case android.R.id.text2:
+					
 					cal.setTimeInMillis(cursor.getLong(columnIndex));
+					
 					((TextView)view).setText(df.format(cal.getTime()));
 					return true;					
 				}
@@ -190,6 +196,7 @@ public class BrowseActivity extends Activity implements AdapterView.OnItemClickL
 		switch (item.getItemId()) {
 		case R.id.menu_edit:
 			openNote(info.id, this);
+			
 			break;
 			
 		case R.id.menu_delete:
@@ -208,6 +215,7 @@ public class BrowseActivity extends Activity implements AdapterView.OnItemClickL
 		switch (v.getId()) {
 		case R.id.new_btn:
 			newBtnDialog.show();
+			
 			break;
 			
 		case R.id.sort_btn:
@@ -222,11 +230,13 @@ public class BrowseActivity extends Activity implements AdapterView.OnItemClickL
 			startActivity(intentc);
 			//sortBtnDialog.show();
 			break;
+		
 		}
 	}
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		
 		openNote(id, this);
 	}
 	

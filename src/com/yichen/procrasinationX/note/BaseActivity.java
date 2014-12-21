@@ -24,7 +24,7 @@ import com.yichen.procrasinationX.R;
 
 abstract class BaseActivity extends Activity {
 	
-	//private static final String TAG = "BaseActivity";
+	
 	
 	protected ImageButton categoryBtn;
 	protected Spinner spinner;

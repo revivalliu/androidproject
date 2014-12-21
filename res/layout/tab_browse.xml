@@ -40,16 +40,16 @@
 	        android:onClick="onClick"
 	        android:layout_marginRight="4dip"
 	        android:background="@drawable/btn_bg"
-	        android:text="Edit"
+	        android:text="List"
             android:drawableLeft="@drawable/pencil" />
 	    <Button
 	        android:id="@+id/new_btn"
-	        android:layout_width="70dip"
+	        android:layout_width="75dip"
 	        android:layout_height="wrap_content"
 	        android:onClick="onClick"
 	        android:layout_marginRight="4dip"
 	        android:background="@drawable/btn_bg"
-	        android:text="Note"
+	        android:text="More"
             android:drawableLeft="@drawable/new_doc" />
 	    <Button
 	        android:id="@+id/sort_btn"
@@ -63,12 +63,12 @@
 	         />
 	    <Button
 	        android:id="@+id/conf_btn"
-	        android:layout_width="70dip"
+	        android:layout_width="85dip"
 	        android:layout_height="wrap_content"
 	        android:onClick="onClick"
 	        android:layout_marginRight="4dip"
 	        android:background="@drawable/btn_bg"
-	        android:text="Conf"
+	        android:text="Option"
             android:drawableLeft="@drawable/preferences" />
     </LinearLayout>
 

@@ -20,11 +20,11 @@
 		    android:drawableLeft="@drawable/folder"
 		    android:drawablePadding="5dip"
 		    android:gravity="center_vertical"
-			android:shadowColor="#333333"
-	        android:shadowDx="0"
-	        android:shadowDy="0"
+			android:shadowColor="#AA66CC"
+	        android:shadowDx="1"
+	        android:shadowDy="1"
 	        android:shadowRadius="1"		    
-		    android:textColor="#cccccc"
+		    android:textColor="#0099CC"
 		    android:textSize="20sp" />
 	
 	</RelativeLayout>
