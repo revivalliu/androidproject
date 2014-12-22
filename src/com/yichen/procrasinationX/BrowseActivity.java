@@ -38,10 +38,7 @@ import com.yichen.procrasinationX.note.SnapshotActivity;
 import com.yichen.procrasinationX.paint.FingerActivity;
 
 
-
 public class BrowseActivity extends Activity implements AdapterView.OnItemClickListener {
-	
-
 	
 	private ListView noteList;
 	private TextView emptyView;
@@ -108,7 +105,6 @@ public class BrowseActivity extends Activity implements AdapterView.OnItemClickL
         findViews();
         db = SmartPad.db;
         
-       
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         
         builder.setTitle("Choose an Option");

@@ -19,7 +19,7 @@
    <string name="audiomemo">Audio Memo</string>
    <string name="countdown">Count Down</string>
    <string name="helpcontent">Please visit yichen.ProcrastinationX.com/help for more information. For help with Navigation or Login, please visit yichen.ProcrastinationX.com/nav. - </string>
-    
+     <string name="setpriority">Set Priority</string>
     <string name="done">Done</string>
     <string name="title">Title</string>
     

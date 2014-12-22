@@ -68,6 +68,7 @@
     </activity>
         <activity android:name="com.yichen.procrasinationX.BrowseActivity"></activity>
         <activity android:name="com.yichen.procrasinationX.Help"></activity>
+        <activity android:name="com.yichen.procrasinationX.login.SetPriorityActivity" android:theme="@android:style/Theme.Dialog"></activity>
         <activity android:name="com.yichen.procrasinationX.AudioActivity"></activity>
         <activity android:name="com.yichen.procrasinationX.ManageActivity"></activity>
         <activity android:name="com.yichen.procrasinationX.SettingsActivity"></activity>

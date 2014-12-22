@@ -27,6 +27,7 @@ import android.widget.Toast;
 
 import com.yichen.procrasinationX.alarmclock.AlarmListActivity;
 import com.yichen.procrasinationX.login.LoginActivity;
+import com.yichen.procrasinationX.login.SetPriorityActivity;
 import com.yichen.procrasinationX.model.Category;
 import com.yichen.procrasinationX.model.Note;
 import com.yichen.procrasinationX.paint.FingerActivity;
@@ -279,6 +280,11 @@ public class ManageActivity extends ExpandableListActivity {
 		case R.id.menu_setReminder:
 			Intent intent = new Intent(this, AlarmListActivity.class);   
 			startActivity(intent);
+			break;
+			
+		case R.id.menu_setPriority:
+			Intent intent1 = new Intent(this, SetPriorityActivity.class);   
+			startActivity(intent1);
 			break;
 		}
 	        
