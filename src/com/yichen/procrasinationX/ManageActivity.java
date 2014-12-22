@@ -24,12 +24,15 @@ import android.widget.ImageButton;
 import android.widget.SimpleCursorTreeAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.yichen.procrasinationX.alarmclock.AlarmListActivity;
 import com.yichen.procrasinationX.login.LoginActivity;
 import com.yichen.procrasinationX.model.Category;
 import com.yichen.procrasinationX.model.Note;
 import com.yichen.procrasinationX.paint.FingerActivity;
 import com.yichen.procrasinationX.paint.PaintActivity;
 import com.yichen.procrasinationX.paint.TuyaActivity;
+import com.yichen.procrasinationX.voicerecognition.VoiceRecognitionActivity;
 import com.yichen.procrasinationX.R;
 
 public class ManageActivity extends ExpandableListActivity {
@@ -130,8 +133,8 @@ public class ManageActivity extends ExpandableListActivity {
 			startActivity(intent);
 			break;
 		case R.id.new_btn1:
-			intent = new Intent(this, PaintActivity.class);   
-			startActivity(intent);
+			intent = new Intent(this, VoiceRecognitionActivity.class);
+			startActivity(intent); 
 			break;
 		case R.id.new_btn:
 			showDialog(DIALOG_NEW_CATEGORY);
@@ -271,9 +274,14 @@ public class ManageActivity extends ExpandableListActivity {
 				category.persist(db);
 			}
 			refresh = true;
-			break;			
+			break;
+			
+		case R.id.menu_setReminder:
+			Intent intent = new Intent(this, AlarmListActivity.class);   
+			startActivity(intent);
+			break;
 		}
-		
+	        
 		if (refresh) {
 			SimpleCursorTreeAdapter adapter = (SimpleCursorTreeAdapter) getExpandableListAdapter();
 	    	adapter.getCursor().requery();

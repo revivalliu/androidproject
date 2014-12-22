@@ -48,12 +48,13 @@
 		        android:id="@+id/title_et"
 		        android:layout_width="fill_parent"
 		        android:layout_height="wrap_content"
-		        android:ems="10"
 		        android:background="@null"
-		        android:textSize="18sp"
+		        android:ems="10"
+		        android:hint="@string/title"
+		        android:inputType="text"
 		        android:textColor="#587058"
-		        android:hint="@string/title" 
-		        android:inputType="text" />
+		        android:textSize="20sp"
+		        android:textCursorDrawable= "@null"/>
 		    
 		    <View 
 		         android:layout_width="fill_parent"

@@ -110,7 +110,6 @@ public class MainActivity extends TabActivity implements OnTabChangeListener {
 	public void onTabChanged(String tabId) {
 	}
 	
-	//------
 			@Override
 			public boolean onOptionsItemSelected(MenuItem item) {
 			    // Handle presses on the action bar items
@@ -139,9 +138,7 @@ public class MainActivity extends TabActivity implements OnTabChangeListener {
 			        	if (sendIntent.resolveActivity(getPackageManager()) != null) {
 			        	    startActivity(sendIntent);
 			        	}
-			       
-			        
-						
+			      
 			            return true;
 			       
 				        

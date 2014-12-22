@@ -37,39 +37,39 @@
         <Button
 	        android:id="@+id/new_btn0"
 	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
+	        android:layout_height="55dip"
 	        android:onClick="onClick"
-	        android:layout_marginRight="4dip"
-	        android:text="Move"
+	        android:layout_marginRight="7dip"
+	        android:text="Paint"
 	        android:background="@drawable/btn_bg"
-	        android:drawableLeft="@drawable/new_archive" />
+	        android:drawableLeft="@drawable/ic_action_picture" />
 	    <Button
 	        android:id="@+id/new_btn"
 	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
+	        android:layout_height="55dip"
 	        android:onClick="onClick"
-	        android:layout_marginRight="4dip"
-	        android:text="New"
+	        android:layout_marginRight="7dip"
+	        android:text="Folder"
 	        android:background="@drawable/btn_bg"
-	        android:drawableLeft="@drawable/new_archive" />
+	        android:drawableLeft="@drawable/ic_action_new" />
 	    <Button
 	        android:id="@+id/settings_btn"
 	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
+	        android:layout_height="55dip"
 	        android:onClick="onClick"
-	        android:layout_marginRight="4dip"
-	        android:text="Conf"
+	        android:layout_marginRight="7dip"
+	        android:text="Setting"
 	        android:background="@drawable/btn_bg"
-	        android:drawableLeft="@drawable/preferences" />
+	        android:drawableLeft="@drawable/ic_action_settings" />
 	    <Button
 	        android:id="@+id/new_btn1"
 	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
+	        android:layout_height="55dip"
 	        android:onClick="onClick"
-	        android:layout_marginRight="4dip"
-	        android:text="Help"
+	        android:layout_marginRight="7dip"
+	        android:text="Voice"
 	        android:background="@drawable/btn_bg"
-	        android:drawableLeft="@drawable/new_archive" />
+	        android:drawableLeft="@drawable/ic_action_mic" />
     </LinearLayout>    
 
 </LinearLayout>
