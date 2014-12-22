@@ -35,41 +35,42 @@
         android:background="@drawable/bar_bg_repeat" >
         <Button
 	        android:id="@+id/clist_btn"
-	        android:layout_width="70dip"
-	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:layout_height="55dip"
 	        android:onClick="onClick"
 	        android:layout_marginRight="4dip"
 	        android:background="@drawable/btn_bg"
-	        android:text="List"
-            android:drawableLeft="@drawable/pencil" />
+	        android:text="Pen"
+            android:drawableLeft="@drawable/ic_action_edit" />
 	    <Button
 	        android:id="@+id/new_btn"
-	        android:layout_width="75dip"
-	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:layout_height="55dip"
 	        android:onClick="onClick"
 	        android:layout_marginRight="4dip"
 	        android:background="@drawable/btn_bg"
-	        android:text="More"
-            android:drawableLeft="@drawable/new_doc" />
+	        android:text="Note"
+            android:drawableLeft="@drawable/ic_action_new" />
+	    
 	    <Button
 	        android:id="@+id/sort_btn"
-	        android:layout_width="70dip"
-	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:layout_height="55dip"
 	        android:onClick="onClick"
 	        android:layout_marginRight="4dip"
 	        android:text="Sort"
-            android:drawableLeft="@drawable/sort"
+            android:drawableLeft="@drawable/ic_action_sort_by_size"
 	        android:background="@drawable/btn_bg"
 	         />
 	    <Button
 	        android:id="@+id/conf_btn"
-	        android:layout_width="85dip"
-	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:layout_height="55dip"
 	        android:onClick="onClick"
 	        android:layout_marginRight="4dip"
 	        android:background="@drawable/btn_bg"
-	        android:text="Option"
-            android:drawableLeft="@drawable/preferences" />
+	        android:text=".."
+            android:drawableLeft="@drawable/ic_action_add_alarm" />
     </LinearLayout>
 
 </LinearLayout>

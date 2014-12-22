@@ -2,7 +2,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item 
         android:state_pressed="true" 
-        android:drawable="@drawable/tuya_sendbutton_init" />
+        android:drawable="@drawable/tuya_sendbutton_init3" />
     <item 
-        android:drawable="@drawable/tuya_sendbutton_selected" />
+        android:drawable="@drawable/tuya_sendbutton_selected2" />
 </selector> 

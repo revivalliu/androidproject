@@ -27,6 +27,9 @@ import android.widget.Toast;
 import com.yichen.procrasinationX.login.LoginActivity;
 import com.yichen.procrasinationX.model.Category;
 import com.yichen.procrasinationX.model.Note;
+import com.yichen.procrasinationX.paint.FingerActivity;
+import com.yichen.procrasinationX.paint.PaintActivity;
+import com.yichen.procrasinationX.paint.TuyaActivity;
 import com.yichen.procrasinationX.R;
 
 public class ManageActivity extends ExpandableListActivity {
@@ -120,13 +123,22 @@ public class ManageActivity extends ExpandableListActivity {
 	}
 	
 	public void onClick(View v) {
+		Intent intent;
 		switch (v.getId()) {
+		case R.id.new_btn0:
+			intent = new Intent(this, TuyaActivity.class);   
+			startActivity(intent);
+			break;
+		case R.id.new_btn1:
+			intent = new Intent(this, PaintActivity.class);   
+			startActivity(intent);
+			break;
 		case R.id.new_btn:
 			showDialog(DIALOG_NEW_CATEGORY);
 			break;
 			
 		case R.id.settings_btn:
-			Intent intent = new Intent();
+			intent = new Intent();
 			if (!SmartPad.isAuth()) {
 	    		intent.setClass(this, AuthActivity.class);
 	    		intent.putExtra("class", SettingsActivity.class);

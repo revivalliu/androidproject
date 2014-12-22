@@ -4,7 +4,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="80dip" >
+            android:padding="80dip"
+            android:background="@drawable/fadeclock" >
 
 		    <EditText
 		        android:id="@+id/editTextUserName"
@@ -54,8 +55,8 @@
 			    android:layout_height="wrap_content"
 			    android:text="Create Account"
 			    android:layout_marginBottom="60dp"
-			    android:textSize="18sp"
-			    android:background="#aaaadd"/>
+			    android:textSize="20sp"
+			    android:background="#FFBB33"/>
 			
     
 </LinearLayout>

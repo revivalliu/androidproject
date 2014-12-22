@@ -74,7 +74,7 @@ public class FingerEditText extends EditText {
 ////           canvas.drawLine(0,this.getHeight()-1,  this.getWidth()-1, this.getHeight()-1, mPaint);  
 //        }
         
-//		//绘制下划线     
+     
 //        canvas.drawLine(0,this.getHeight()-1,  this.getWidth()-1, this.getHeight()-1, mPaint);     
 		
 		/*int newCount = getLineCount();

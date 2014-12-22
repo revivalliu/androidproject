@@ -58,7 +58,7 @@ public class TuyaActivity extends Activity implements OnClickListener,OnScrollLi
 	private static final int USE_ERASER = 3;
 	private static final int USE_PAINT = 4;
 	
-	//
+	
 	private static final String TAG = "TuyaActivity";
 	private LinearLayout linearlayout;
 	private Button colourtag;
@@ -81,15 +81,15 @@ public class TuyaActivity extends Activity implements OnClickListener,OnScrollLi
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 				case UNDO_PATH:
-					int undo = tuyaView.undo(); //撤销上次操作
-					System.out.println("可以撤销："+undo);
+					int undo = tuyaView.undo(); 
+					System.out.println("undo"+undo);
 					if(undo<0){
 						CANCLE_BACKGROUND_IMAGE ++;
 						switch (CANCLE_BACKGROUND_IMAGE) {
 						case 0:
 							break;
 						case 1:
-							System.out.println("设置imageview为默认");
+							System.out.println("set imageview default");
 							imageview_background.setBackgroundColor(defaultColor);
 					    	imageview_background.setImageBitmap(null);
 					    	CANCLE_BACKGROUND_IMAGE =0;
@@ -99,10 +99,10 @@ public class TuyaActivity extends Activity implements OnClickListener,OnScrollLi
 					
 					break;
 				case REDO_PATH:
-					int redo = tuyaView.redo(); //返回上次操作
-					System.out.println("可以前进："+ redo);
+					int redo = tuyaView.redo(); 
+					System.out.println("forward："+ redo);
 					if(redo<1){
-						//设置按钮不可用
+						
 					}
 					break;
 				case USE_ERASER:
@@ -152,7 +152,7 @@ public class TuyaActivity extends Activity implements OnClickListener,OnScrollLi
 		imageview_background = (ImageView) findViewById(R.id.imageview_background);
 		tuyaView=(TuyaView)findViewById(R.id.tuyaView);
 		
-		//
+	
         colourtag = (Button)this.findViewById(R.id.colourtag);
         bigtag = (Button)this.findViewById(R.id.bigtag);
         
@@ -189,8 +189,8 @@ public class TuyaActivity extends Activity implements OnClickListener,OnScrollLi
 			    String img_path = actualimagecursor.getString(actual_image_column_index);  
 			    File file = new File(img_path);  
 			    if (file.exists()){
-			    	System.out.println("图片路径为："+img_path);
-			    	//设置背景图
+			    	System.out.println("image path："+img_path);
+			   
 			    	Bitmap bitmap = loadFromSdCard(img_path);
 			    	imageview_background.setBackgroundColor(defaultColor);
 			    	imageview_background.setImageBitmap(bitmap);
@@ -205,11 +205,11 @@ public class TuyaActivity extends Activity implements OnClickListener,OnScrollLi
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-//		if (keyCode == KeyEvent.KEYCODE_BACK) {// 返回键
+//		if (keyCode == KeyEvent.KEYCODE_BACK) {
 //			this.finish();
-//			int undo = tuyaView.undo(); //撤销上次操作
+//			int undo = tuyaView.undo(); 
 //			if(undo<1){
-//				System.out.println("设置imageview为默认");
+//				System.out.println("set imageview default");
 //				imageview_background.setBackgroundColor(0xff99CCCC);
 //		    	imageview_background.setImageBitmap(null);
 //			}
@@ -229,7 +229,7 @@ public class TuyaActivity extends Activity implements OnClickListener,OnScrollLi
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 			case R.id.button_changebg:
-				System.out.println("打开图库");
+				System.out.println("open gallery");
 				Intent intent = new Intent(Intent.ACTION_GET_CONTENT);   
 				intent.addCategory(Intent.CATEGORY_OPENABLE);   
 				intent.setType("image/*");  
@@ -275,7 +275,7 @@ public class TuyaActivity extends Activity implements OnClickListener,OnScrollLi
 				sendTuyaBitmap();
 				break;
 		}
-		//颜色
+		
 		int j = -1;
 		for(int i=0;i<colours.size();i++){
 			if(v.getId()==colours.get(i).getTag()){
@@ -287,14 +287,14 @@ public class TuyaActivity extends Activity implements OnClickListener,OnScrollLi
 				colours.get(i).getButtonbg().setVisibility(View.INVISIBLE);
 			}
 			colours.get(j).getButtonbg().setVisibility(View.VISIBLE);
-			//改变颜色
+			
 			colours.get(j).getName();
 			Log.i(TAG, ""+colours.get(j).getName());
 			TuyaView.color = Color.parseColor("#"+colours.get(j).getName());
 			return;
 		}
 		
-		//大小
+		
 		for(int i=0;i<sizes.size();i++){
 			if(v.getId()==sizes.get(i).getTag()){
 				j=i;
@@ -305,7 +305,7 @@ public class TuyaActivity extends Activity implements OnClickListener,OnScrollLi
 				sizes.get(i).getButton().setBackgroundResource(0);
 			}
 			sizes.get(j).getButton().setBackgroundResource(R.drawable.tuya_brushsizeselectedbg);
-			//改变大小
+			
 			sizes.get(j).getName();
 			Log.i(TAG, ""+sizes.get(j).getName());
 			TuyaView.srokeWidth=sizes.get(j).getName()+10;
@@ -315,34 +315,32 @@ public class TuyaActivity extends Activity implements OnClickListener,OnScrollLi
 	}
 
 
-	/**
-	 * 发送图片
-	 */
+	
 	private void sendTuyaBitmap() {
-		//发送按钮
+		
 		 boolean drawingCacheEnabled = tuyaFrameLayout.isDrawingCacheEnabled();
 		  if(!drawingCacheEnabled){
 			  tuyaFrameLayout.setDrawingCacheEnabled(true);
 			  tuyaFrameLayout.buildDrawingCache();
 		  }
-		   //获得当前的Bitmap对象
+		   
 		  Bitmap bitmap = tuyaFrameLayout.getDrawingCache();
 		  if(bitmap!=null){
-			   //读取SD卡状态
+			   
 			   boolean sdCardIsMounted = android.os.Environment.getExternalStorageState().equals(
 					android.os.Environment.MEDIA_MOUNTED);
 			   if (!sdCardIsMounted){
-				   Toast.makeText(this, "请插入存储卡！", 1000).show();
+				   Toast.makeText(this, "insert sd card", 1000).show();
 			   }else{
-				   //保存到SD卡
+				   
 				   String filepath =  Environment.getExternalStorageDirectory() + "/caiman/tuya.jpg";
 		   		   try {
 		   				FileOutputStream fos = new FileOutputStream(new File(filepath));
 		   				bitmap.compress(CompressFormat.JPEG, 100, fos);
 		   				fos.flush();
 		   				fos.close();
-		   			    Toast.makeText(this, "保存成功！", 1000).show();
-		   			    //跳转到对应界面 
+		   			    Toast.makeText(this, "save succesfully", 1000).show();
+		   			  
 		   			
 		   			} catch (FileNotFoundException e) {
 		   				e.printStackTrace();
@@ -351,7 +349,7 @@ public class TuyaActivity extends Activity implements OnClickListener,OnScrollLi
 		   			}
 			   }
 		   }else{
-			   Toast.makeText(this, "未能发送图片，请重试！", 1000).show();
+			   Toast.makeText(this, "retry", 1000).show();
 		   }
 	}
 	

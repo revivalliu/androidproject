@@ -8,7 +8,7 @@ import org.apache.http.protocol.HTTP;
 import com.yichen.procrasinationX.R;
 import com.yichen.procrasinationX.R.string;
 import com.yichen.procrasinationX.alarmclock.AlarmListActivity;
-import com.yichen.procrasinationX.alarmmanager.AlarmManagerActivity;
+
 import com.yichen.procrasinationX.note.SnapshotActivity;
 import com.yichen.procrasinationX.paint.FingerActivity;
 
@@ -139,19 +139,11 @@ public class MainActivity extends TabActivity implements OnTabChangeListener {
 			        	if (sendIntent.resolveActivity(getPackageManager()) != null) {
 			        	    startActivity(sendIntent);
 			        	}
-			        	//--
+			       
 			        
 						
 			            return true;
-			        case R.id.settings:
-				        
-				        	intent = new Intent(MainActivity.this, SettingsActivity.class);   
-						startActivity(intent); 
-//						final Intent intentDeviceTest = new Intent("android.intent.action.MAIN"); //intent or view               
-//						intentDeviceTest.setComponent(new ComponentName("com.yichen.procrasinationX","com.yichen.procrasinationX.remindme.ReminderMainActivity"));
-//						startActivity(intentDeviceTest);
-//							
-				        return true;
+			       
 				        
 			        case R.id.countdown:
 			        	intent = new Intent(MainActivity.this, CountdownActivity.class);   
@@ -163,11 +155,9 @@ public class MainActivity extends TabActivity implements OnTabChangeListener {
 					startActivity(intent); 
 				        return true;
 				        
-			        case R.id.help:
-			        	intent = new Intent(MainActivity.this, Help.class);   
-						startActivity(intent); 
+			        
 
-				        return true;  
+				         
 			        case R.id.location:
 			        	Uri locations = Uri.parse("geo:0,0?q=1600+Holloway+Avenue,+San+Francisco,+California");
 			        	Intent mapIntents = new Intent(Intent.ACTION_VIEW, locations);
@@ -202,7 +192,22 @@ public class MainActivity extends TabActivity implements OnTabChangeListener {
 //					
 			        		intent = new Intent(MainActivity.this, AlarmListActivity.class);   
 						startActivity(intent);
-	        		    		return true;			        				      
+	        		    		return true;		
+	        		    		
+			        case R.id.help:
+			        	intent = new Intent(MainActivity.this, Help.class);   
+						startActivity(intent); 
+						return true;
+	        		    		
+			        case R.id.settings:
+				        
+			        	intent = new Intent(MainActivity.this, SettingsActivity.class);   
+					startActivity(intent); 
+//					final Intent intentDeviceTest = new Intent("android.intent.action.MAIN"); //intent or view               
+//					intentDeviceTest.setComponent(new ComponentName("com.yichen.procrasinationX","com.yichen.procrasinationX.remindme.ReminderMainActivity"));
+//					startActivity(intentDeviceTest);
+//						
+			        return true;
 	
 			        default:
 			            return super.onOptionsItemSelected(item);

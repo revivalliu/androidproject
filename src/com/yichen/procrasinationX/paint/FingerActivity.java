@@ -56,7 +56,7 @@ public class FingerActivity extends Activity implements OnClickListener ,OnScrol
 	
 	private int editTextLineHeight;
 	
-	private Paint mPaint;//自定义view中的画笔
+	private Paint mPaint;
 	
 	private static final int RECEIVE_BITMAP_TO_UPDATE_ACTIVITY = 1;
 	
@@ -73,16 +73,16 @@ public class FingerActivity extends Activity implements OnClickListener ,OnScrol
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 			case RECEIVE_BITMAP_TO_UPDATE_ACTIVITY:
-				System.out.println("*********4.activity已收到数据,正在组织数据 *********");
+				System.out.println("*********activity data collected *********");
 				Bundle bundle = new Bundle();
 				bundle = msg.getData();
 				Bitmap tempBitmap = bundle.getParcelable("bitmap");
 				if (null != tempBitmap) {
-					System.out.println("*********5.将bitmap变为指定大小，并将其赋值给edittext *********");
-					//获得tempBitmap的大小，如果大就缩小，如果小就方法或不变
+					System.out.println("*********set bitmap value and send it  *********");
+					
 					int width = tempBitmap.getWidth();
 					int height = tempBitmap.getHeight();
-					//得到当前的行高与行宽（估算值），实际画上去的bitmap应该小于行高
+					
 					System.out.println("-------------------------------mHeight"+mHeight+"-------------------mWidth"+mWidth);
 					int lineHeight =  (int) (mHeight/6f);
 					int lineWidth = (int) (mWidth/4f); 
@@ -97,25 +97,25 @@ public class FingerActivity extends Activity implements OnClickListener ,OnScrol
 //					int lineWidth = editTextLineHeight-3; 
 					
 					if(width >= lineWidth && height >= lineWidth){ 
-						//整体缩小
-						System.out.println("整体缩小");
+						
+						System.out.println("zoom out");
 						tempBitmap = PicZoom(tempBitmap, lineWidth, lineHeight);
 					}
 					if(width >= lineWidth && height <= lineWidth){
-						//宽度缩小
-						System.out.println("按宽度缩小");
+						
+						System.out.println("zoom out");
 						tempBitmap = PicZoom3(tempBitmap,  lineWidth);
 					}
 					if(width <= lineWidth && height >= lineWidth){
-						//高度缩小
-						System.out.println("按高度缩小");
+						
+						System.out.println("zoom out");
 						tempBitmap = PicZoom2(tempBitmap,  lineHeight);
 					}
 					if(width <= lineWidth && height <= lineWidth){ 
-						System.out.println("整体放大，这里暂时不需要，直接显示小的就行了");
+						System.out.println("shown minimized");
 					}
-					//添加到edittext上
-					System.out.println("绘制bitmap的高度："+tempBitmap.getHeight());
+					
+					System.out.println("draw the height of bitmap："+tempBitmap.getHeight());
 					editInsertBitmap(tempBitmap);
 				}
 				break;

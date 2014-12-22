@@ -14,13 +14,9 @@
     		  android:showAsAction="ifRoom"/>
     
     <item android:id="@+id/audio"
-          android:icon="@drawable/ic_action_mic"
+          android:icon="@drawable/ic_action_play"
           android:title="@string/audiomemo"
     		  android:showAsAction="ifRoom"/>
-    
-    <item android:id="@+id/settings"
-          android:icon="@drawable/ic_action_settings"
-          android:title="@string/settings" />
     
     <item 
               android:id="@+id/countdown" 
@@ -28,11 +24,7 @@
               android:title="@string/countdown" 
               android:showAsAction="ifRoom" />
     
-    <item 
-              android:id="@+id/help" 
-              android:icon = "@drawable/ic_action_help"
-              android:title="@string/help" 
-              android:showAsAction="ifRoom" />
+    
     <item 
               android:id="@+id/location" 
               android:icon = "@drawable/ic_action_place"
@@ -46,21 +38,30 @@
               
         <item 
               android:id="@+id/others" 
-              android:icon = "@drawable/ic_whats_hot"
+              android:icon = "@drawable/ic_action_mic"
               android:title="Voice Recognition" 
               android:showAsAction="ifRoom" />
         
         <item 
               android:id="@+id/doodleNote" 
-              android:icon = "@drawable/pencil"
-              android:title="Doodle note" 
+              android:icon = "@drawable/ic_action_edit"
+              android:title="Doodle Notes" 
               android:showAsAction="ifRoom" />
         
         <item 
               android:id="@+id/setAlarm" 
-              android:icon = "@drawable/ic_whats_hot"
+              android:icon = "@drawable/ic_action_add_alarm"
               android:title="Set Alarm" 
               android:showAsAction="ifRoom" />
         
+        <item 
+              android:id="@+id/help" 
+              android:icon = "@drawable/ic_action_help"
+              android:title="@string/help" 
+              android:showAsAction="ifRoom" />
+        
+        <item android:id="@+id/settings"
+          android:icon="@drawable/ic_action_settings"
+          android:title="@string/settings" />
     
 </menu>

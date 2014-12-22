@@ -6,12 +6,12 @@
 	android:layout_height="fill_parent">
 	
 	<FrameLayout
-	  xmlns:android="http://schemas.android.com/apk/res/android"
+	
 	  android:layout_width="fill_parent" 
 	  android:layout_height="fill_parent"
-    android:layout_alignParentBottom="true"
-    android:layout_marginBottom="46.67dip"
-    android:id="@+id/tuya_layout"     
+     android:layout_alignParentBottom="true"
+     android:layout_marginBottom="46.67dip"
+     android:id="@+id/tuya_layout"     
 	  >
 		  <ImageView 
 			android:layout_width="fill_parent" 
@@ -47,7 +47,7 @@
 	android:id="@+id/colourtag"
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content" 
-	android:text="颜色"
+	android:text="color"
 	android:layout_weight="1"
     android:background="@drawable/tuya_selectedtrue"
     android:textColor="#606060"
@@ -57,7 +57,7 @@
 	android:id="@+id/bigtag"
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content" 
-	android:text="大小"
+	android:text="size"
 	android:layout_weight="1"
     android:background="@drawable/tuya_selectedfalse"
     android:textColor="#606060"
@@ -96,7 +96,7 @@
     />
 <include layout="@layout/tuya_colourlayout"/>
 	
-<!-- 壁画粗细 -->
+
 <ScrollView
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
@@ -107,6 +107,7 @@
     android:layout_marginLeft="19.33dip"
     android:layout_marginRight="19.33dip"
     android:layout_marginTop="2.67dip">
+    
 	<com.yichen.procrasinationX.paint.view.MyHorizontalScrollView 
 	android:id="@+id/HorizontalScrollView02"
 	android:layout_width="fill_parent"
@@ -413,7 +414,6 @@
 </LinearLayout>
 </LinearLayout>
 <LinearLayout 
-		xmlns:android="http://schemas.android.com/apk/res/android"
 		android:orientation="horizontal" 
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
@@ -422,7 +422,7 @@
 		android:visibility="gone"
 		>
 		<!--<Button 
-			android:text="添加图片" 
+			android:text="add picture" 
 			android:id="@+id/button_changebg" 
 			android:layout_width="wrap_content" 
 			android:layout_height="wrap_content"
@@ -430,7 +430,7 @@
 			android:onClick="onClick"
 		/>  -->
 		<!--<Button 
-			android:text="上一步" 
+			android:text="previous" 
 			android:id="@+id/button_undo" 
 			android:layout_width="wrap_content" 
 			android:layout_height="wrap_content"
@@ -438,7 +438,7 @@
 			android:onClick="onClick"
 		/>-->
 		<Button 
-			android:text="下一步" 
+			android:text="next" 
 			android:id="@+id/button_redo" 
 			android:layout_width="wrap_content" 
 			android:layout_height="wrap_content"
@@ -446,7 +446,7 @@
 			android:onClick="onClick"
 		/>
 		<!--<Button 
-			android:text="画笔" 
+			android:text="Pencil" 
 			android:id="@+id/button_pen" 
 			android:layout_width="wrap_content" 
 			android:layout_height="wrap_content"
@@ -454,7 +454,7 @@
 			android:onClick="onClick"
 		/>-->
 		<!--<Button 
-			android:text="橡皮" 
+			android:text="Eraser" 
 			android:id="@+id/button_eraser" 
 			android:layout_width="wrap_content" 
 			android:layout_height="wrap_content"

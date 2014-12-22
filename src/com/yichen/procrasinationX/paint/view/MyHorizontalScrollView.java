@@ -23,31 +23,22 @@ public class MyHorizontalScrollView extends HorizontalScrollView{
 	@Override
 	protected void onScrollChanged(int l, int t, int oldl, int oldt) {
 	        View view = (View) getChildAt(getChildCount()-1);
-//	        int diff = (view.getLeft()-getScrollX());// 如果为0，证明滑动到最左边
-//	        int diff = (view.getRight()-(getWidth()+getScrollX()));// 如果为0证明滑动到最右边
-	        if(view.getLeft()-getScrollX()==0){// 如果为0，证明滑动到最左边
+
+	        if(view.getLeft()-getScrollX()==0){
 	        	onScrollListener.onLeft();
-	        	Log.d("TAG", "最左边");
-	        }else if((view.getRight()-(getWidth()+getScrollX()))==0){//如果为0证明滑动到最右边
+	        	Log.d("TAG", "leftmost");
+	        }else if((view.getRight()-(getWidth()+getScrollX()))==0){
 	        	onScrollListener.onRight();
-	          	Log.d("TAG", "最右边");
-	        }else{//说明在中间
+	          	Log.d("TAG", "rightmost");
+	        }else{
 	        	onScrollListener.onScroll();
-	        	Log.d("TAG", "中间");
+	        	Log.d("TAG", "center");
 	        }
 	        super.onScrollChanged(l, t, oldl, oldt);
 	}
 	    
-	    /**
-	     * 定义接口
-	     * @author admin
-	     *
-	     */
-//	    public interface OnScrollListener1{
-//	    	void onRight();
-//	    	void onLeft();
-//	    	void onScroll();
-//	    }
+	    
+
 	    private OnScrollListener1 onScrollListener;
 	    public void setOnScrollListener(OnScrollListener1 onScrollListener){
 	    	this.onScrollListener=onScrollListener;

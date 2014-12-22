@@ -34,43 +34,37 @@ public class TuyaView extends View {
 	private Bitmap mBitmap;
 	private Canvas mCanvas;
 	private Path mPath;
-	private Paint mBitmapPaint;// 画布的画笔
-	private Paint mPaint;// 真实的画笔
-	private float mX, mY;// 临时点坐标
+	private Paint mBitmapPaint;
+	private Paint mPaint;
+	private float mX, mY;
 	private static final float TOUCH_TOLERANCE = 4;
 
-	// 保存Path路径的集合,用List集合来模拟栈，用于后退步骤
+	
 	private static List<DrawPath> savePath;
 	
-	// 保存Path路径的集合,用List集合来模拟栈,用于前进步骤
+	
 	private static List<DrawPath> canclePath;
 	
-	// 记录Path路径的对象
+	
 	private DrawPath dp;
 
-	private int screenWidth, screenHeight;// 屏幕長寬
+	private int screenWidth, screenHeight;
 
 	private class DrawPath {
-		public Path path;// 路径
-		public Paint paint;// 画笔
+		public Path path;
+		public Paint paint;
 	}
 	
-	//背景颜色
+
 //	public static  int color = Color.RED;
 	public static  int color = Color.parseColor("#fe0000");
 	public static  int srokeWidth = 15;
 	
-	/**
-	 * 得到画笔
-	 * @return
-	 */
+	
 	public Paint getPaint() {
 		return mPaint;
 	}
-	/**
-	 * 设置画笔
-	 * @param mPaint
-	 */
+	
 	public void setPaint(Paint mPaint) {
 		this.mPaint = mPaint;
 	}
@@ -80,18 +74,16 @@ public class TuyaView extends View {
 		screenHeight = h;
 		mBitmap = Bitmap.createBitmap(screenWidth, screenHeight,
 				Bitmap.Config.ARGB_8888);
-		// 保存一次一次绘制出来的图形
+		
 		mCanvas = new Canvas(mBitmap);
 		mBitmapPaint = new Paint(Paint.DITHER_FLAG);
 		mPaint = new Paint();
 		mPaint.setAntiAlias(true);
-//		mPaint.setStyle(Paint.Style.STROKE);
-//		mPaint.setStrokeJoin(Paint.Join.ROUND);// 设置外边缘
-//		mPaint.setStrokeCap(Paint.Cap.SQUARE);// 形状
+
 		mPaint.setStyle(Paint.Style.STROKE);
-		mPaint.setStrokeJoin(Paint.Join.ROUND);// 设置外边缘
-		mPaint.setStrokeCap(Paint.Cap.ROUND);// 形状
-		mPaint.setStrokeWidth(srokeWidth);// 画笔宽度
+		mPaint.setStrokeJoin(Paint.Join.ROUND);
+		mPaint.setStrokeCap(Paint.Cap.ROUND);
+		mPaint.setStrokeWidth(srokeWidth);
 		mPaint.setColor(color);
 		savePath = new ArrayList<DrawPath>();
 		canclePath = new ArrayList<DrawPath>();
@@ -100,13 +92,11 @@ public class TuyaView extends View {
 	private void initPaint(){
 		mPaint = new Paint();
 		mPaint.setAntiAlias(true);
-//		mPaint.setStyle(Paint.Style.STROKE);
-//		mPaint.setStrokeJoin(Paint.Join.ROUND);// 设置外边缘
-//		mPaint.setStrokeCap(Paint.Cap.SQUARE);// 形状
+
 		mPaint.setStyle(Paint.Style.STROKE);
-		mPaint.setStrokeJoin(Paint.Join.ROUND);// 设置外边缘
-		mPaint.setStrokeCap(Paint.Cap.ROUND);// 形状
-		mPaint.setStrokeWidth(srokeWidth);// 画笔宽度
+		mPaint.setStrokeJoin(Paint.Join.ROUND);
+		mPaint.setStrokeCap(Paint.Cap.ROUND);
+		mPaint.setStrokeWidth(srokeWidth);
 		mPaint.setColor(color);
 	}
 	
@@ -137,12 +127,10 @@ public class TuyaView extends View {
 
 	@Override
 	public void onDraw(Canvas canvas) {
-		//背景颜色，这里颜色应该是
-//		canvas.drawColor(color);
-		// 将前面已经画过得显示出来
+		
 		canvas.drawBitmap(mBitmap, 0, 0, mBitmapPaint);
 		if (mPath != null) {
-			// 实时的显示
+			
 			canvas.drawPath(mPath, mPaint);
 		}
 	}
@@ -157,7 +145,7 @@ public class TuyaView extends View {
 		float dx = Math.abs(x - mX);
 		float dy = Math.abs(mY - y);
 		if (dx >= TOUCH_TOLERANCE || dy >= TOUCH_TOLERANCE) {
-			// 从x1,y1到x2,y2画一条贝塞尔曲线，更平滑(直接用mPath.lineTo也是可以的)
+			
 			mPath.quadTo(mX, mY, (x + mX) / 2, (y + mY) / 2);
 			mX = x;
 			mY = y;
@@ -167,26 +155,23 @@ public class TuyaView extends View {
 	private void touch_up() {
 		mPath.lineTo(mX, mY);
 		mCanvas.drawPath(mPath, mPaint);
-		// 将一条完整的路径保存下来(相当于入栈操作)
+		
 		savePath.add(dp);
-		mPath = null;// 重新置空
+		mPath = null;
 	}
 
-	/**
-	 * 撤销的核心思想就是将画布清空， 将保存下来的Path路径最后一个移除掉， 重新将路径画在画布上面。
-	 */
+	
 	public int undo() {
 		
 		mBitmap = Bitmap.createBitmap(screenWidth, screenHeight,
 				Bitmap.Config.ARGB_8888);
-		mCanvas.setBitmap(mBitmap);// 重新设置画布，相当于清空画布
-		// 清空画布，但是如果图片有背景的话，则使用上面的重新初始化的方法，用该方法会将背景清空掉…
+		mCanvas.setBitmap(mBitmap);
 		if (savePath != null && savePath.size() > 0) {
 			
 			DrawPath dPath =savePath.get(savePath.size() - 1);
 			canclePath.add(dPath);
 			
-			// 移除最后一个path,相当于出栈操作
+			
 			savePath.remove(savePath.size() - 1);
 
 			Iterator<DrawPath> iter = savePath.iterator();
@@ -194,7 +179,7 @@ public class TuyaView extends View {
 				DrawPath drawPath = iter.next();
 				mCanvas.drawPath(drawPath.path, drawPath.paint);
 			}
-			invalidate();// 刷新
+			invalidate();
 			
 		}else{
 			return -1;
@@ -202,20 +187,16 @@ public class TuyaView extends View {
 		return savePath.size();
 	}
 
-	/**
-	 * 重做的核心思想就是将撤销的路径保存到另外一个集合里面(栈)， 然后从redo的集合里面取出最顶端对象， 画在画布上面即可。
-	 */
 	public int redo() {
-		// 如果撤销你懂了的话，那就试试重做吧。
+		
 		if(canclePath.size()<1)
 			return canclePath.size();
 		
 		mBitmap = Bitmap.createBitmap(screenWidth, screenHeight,
 				Bitmap.Config.ARGB_8888);
-		mCanvas.setBitmap(mBitmap);// 重新设置画布，相当于清空画布
-		// 清空画布，但是如果图片有背景的话，则使用上面的重新初始化的方法，用该方法会将背景清空掉…
+		mCanvas.setBitmap(mBitmap);
 		if (canclePath != null && canclePath.size() > 0) {
-			// 移除最后一个path,相当于出栈操作
+		
 			DrawPath  dPath = canclePath.get(canclePath.size() - 1);
 			savePath.add(dPath);
 			canclePath.remove(canclePath.size() - 1);
@@ -225,7 +206,7 @@ public class TuyaView extends View {
 				DrawPath drawPath = iter.next();
 				mCanvas.drawPath(drawPath.path, drawPath.paint);
 			}
-			invalidate();// 刷新
+			invalidate();
 		}
 		return canclePath.size();
 	}
@@ -239,11 +220,11 @@ public class TuyaView extends View {
 		case MotionEvent.ACTION_DOWN:
 			
 			initPaint();
-			//重置下一步操作
+			
 			canclePath = new ArrayList<DrawPath>();
-			// 每次down下去重新new一个Path
+			
 			mPath = new Path();
-			// 每一次记录的路径对象是不一样的
+			
 			dp = new DrawPath();
 			dp.path = mPath;
 			dp.paint = mPaint;

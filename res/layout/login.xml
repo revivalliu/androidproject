@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/px_clock"
     android:orientation="vertical" >
 
     <EditText
@@ -11,7 +10,7 @@
         android:layout_height="wrap_content"
         android:hint="User Name"
         android:ems="10" >
-
+       
         <requestFocus />
     </EditText>
 
@@ -21,12 +20,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        android:hint="Password" />
+        android:hint="Password" 
+        android:layout_below="@+id/editTextUserNameToLogin"/>
 
     <Button
         android:id="@+id/buttonSignIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign In" />
+        android:text="Sign In"
+        android:layout_below="@+id/editTextPasswordToLogin" />
 
-</LinearLayout>
+</RelativeLayout>

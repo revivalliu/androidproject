@@ -26,7 +26,7 @@ public class PaintActivity extends TabActivity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		
-		requestWindowFeature(Window.FEATURE_NO_TITLE);//去掉标题栏
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		
 		setContentView(R.layout.tuya_paint_layout);
 		
@@ -35,7 +35,7 @@ public class PaintActivity extends TabActivity {
 	    TabSpec spec;
 	    Intent intent;
  
-	    //第一个TAB 手写
+	    
 	    intent = new Intent(this,FingerActivity.class);
 	    spec = tabHost.newTabSpec("tab1").setIndicator(
 				getTabItemView(0)).setContent(intent);
@@ -50,7 +50,7 @@ public class PaintActivity extends TabActivity {
 	    
 	    */
 	    
-	    tabHost.setCurrentTab(0);//默认手写
+	    tabHost.setCurrentTab(0);
 	}
 
 	private View getTabItemView(int index) {

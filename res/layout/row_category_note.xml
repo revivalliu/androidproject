@@ -19,7 +19,7 @@
 		    android:layout_height="wrap_content"
 		    android:drawableLeft="@drawable/file"
 		    android:drawablePadding="5dip"
-		    android:textColor="@android:color/darker_gray"
+		    android:textColor="#0099CC"
 		    android:singleLine="true"
 		    android:ellipsize="end"
 		    android:textSize="18sp"

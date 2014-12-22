@@ -35,6 +35,7 @@ import com.yichen.procrasinationX.model.Note;
 import com.yichen.procrasinationX.note.BasicActivity;
 import com.yichen.procrasinationX.note.ChecklistActivity;
 import com.yichen.procrasinationX.note.SnapshotActivity;
+import com.yichen.procrasinationX.paint.FingerActivity;
 
 
 
@@ -223,11 +224,11 @@ public class BrowseActivity extends Activity implements AdapterView.OnItemClickL
 			sortBtnDialog.show();
 			break;
 		case R.id.clist_btn:
-			Intent intent = new Intent(BrowseActivity.this, ChecklistActivity.class);   
+			Intent intent = new Intent(BrowseActivity.this, FingerActivity.class);   
 			startActivity(intent);
 			break;
 		case R.id.conf_btn:
-			Intent intentc = new Intent(BrowseActivity.this, SettingsActivity.class);   
+			Intent intentc = new Intent(BrowseActivity.this,AlarmListActivity.class);   
 			startActivity(intentc);
 			//sortBtnDialog.show();
 			break;

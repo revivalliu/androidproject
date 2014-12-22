@@ -79,6 +79,8 @@
 		<activity android:name="com.yichen.procrasinationX.note.PhotoActivity" android:windowSoftInputMode="stateHidden"></activity>
 		
         <activity android:name="com.yichen.procrasinationX.paint.FingerActivity"></activity>
+        <activity android:name="com.yichen.procrasinationX.paint.PaintActivity"></activity>
+        <activity android:name="com.yichen.procrasinationX.paint.TuyaActivity"></activity>
         <activity android:name="com.yichen.procrasinationX.alarmmanager.AlarmManagerActivity"></activity>
         <activity android:name="com.yichen.procrasinationX.voicerecognition.VoiceRecognitionActivity"></activity>
         <activity android:name="com.yichen.procrasinationX.alarmclock.AlarmListActivity" />
@@ -88,11 +90,7 @@
         <service android:name="com.yichen.procrasinationX.alarmclock.AlarmService" 
             android:enabled="true"/>
         
-        <receiver android:name="com.yichen.procrasinationX.alarmclock.AlarmManagerHelper" >
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
+       
 		
     </application>
     

@@ -28,6 +28,7 @@ public class VoiceRecognitionActivity extends Activity {
 	private ListView mlvTextMatches;
 	private Spinner msTextMatches;
 	private Button mbtSpeak;
+	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

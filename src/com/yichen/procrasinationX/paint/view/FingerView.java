@@ -32,9 +32,10 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
+
 public class FingerView extends View {
 
-	//这个handler主要是为了给activity传递数据
+	
 	public Handler dataHandler;
 	public Handler getDataHandler() {
 		return dataHandler;
@@ -44,11 +45,11 @@ public class FingerView extends View {
 	}
 	
 	
-	FingerMatrix fingerMatrix;  //用于计算触摸矩阵坐标
+	FingerMatrix fingerMatrix;  
 	
 	
 	
-	//用于对外部activity设置画笔的对应属性
+	
 	public Paint getmPaint() {
 		return mPaint;
 	}
@@ -65,29 +66,29 @@ public class FingerView extends View {
 		
 	}
 
-	/****************************/
-	//背景颜色
+
+	
 	public static  int color = Color.RED;
 	public static  int srokeWidth = 15;
 	
 	private Bitmap mBitmap;
 	private Canvas mCanvas;
 	private Path mPath;
-	private Paint mBitmapPaint;// 画布的画笔
-	private Paint mPaint;// 真实的画笔
-	private float mX, mY;// 临时点坐标
+	private Paint mBitmapPaint;
+	private Paint mPaint;
+	private float mX, mY;
 	private static final float TOUCH_TOLERANCE = 4;
 
-	// 保存Path路径的集合,用List集合来模拟栈
+	
 	private static List<DrawPath> savePath;
-	// 记录Path路径的对象
+	
 	private DrawPath dp;
 
-	private int screenWidth, screenHeight;// 屏幕長寬
+	private int screenWidth, screenHeight;
 
 	private class DrawPath {
-		public Path path;// 路径
-		public Paint paint;// 画笔
+		public Path path;
+		public Paint paint;
 	}
 	
 	
@@ -117,10 +118,7 @@ public class FingerView extends View {
 		init(dm.widthPixels, dm.heightPixels);
 	}
 
-//	public FingerView(Context context, int w, int h) {
-//		super(context);
-//		init(w, h);
-//	}
+
 
 	private void init(int w, int h) {
 		screenWidth = w;
@@ -128,7 +126,7 @@ public class FingerView extends View {
 
 		mBitmap = Bitmap.createBitmap(screenWidth, screenHeight,
 				Bitmap.Config.ARGB_8888);
-		// 保存一次一次绘制出来的图形
+		
 		mCanvas = new Canvas(mBitmap);
 
 		mBitmapPaint = new Paint(Paint.DITHER_FLAG);
@@ -136,24 +134,23 @@ public class FingerView extends View {
 		mPaint.setAntiAlias(true);
 
 		mPaint.setStyle(Paint.Style.STROKE);
-		mPaint.setStrokeJoin(Paint.Join.ROUND);// 设置外边缘
-		mPaint.setStrokeCap(Paint.Cap.SQUARE);// 形状
-		mPaint.setStrokeWidth(15);// 画笔宽度
+		mPaint.setStrokeJoin(Paint.Join.ROUND);
+		mPaint.setStrokeCap(Paint.Cap.SQUARE);
+		mPaint.setStrokeWidth(15);
 
 		savePath = new ArrayList<DrawPath>();
 		
-		timer = new Timer(true); //初始化timer
+		timer = new Timer(true); 
 		
 		fingerMatrix=new FingerMatrix();
 	}
 
 	@Override
 	public void onDraw(Canvas canvas) {
-		//canvas.drawColor(color);//背景颜色，不设置为透明，否则看不到后面的自定义edittext了
-		// 将前面已经画过得显示出来
+		
 		canvas.drawBitmap(mBitmap, 0, 0, mBitmapPaint);
 		if (mPath != null) {
-			// 实时的显示
+			
 			canvas.drawPath(mPath, mPaint);
 		}
 		
@@ -169,7 +166,7 @@ public class FingerView extends View {
 		float dx = Math.abs(x - mX);
 		float dy = Math.abs(mY - y);
 		if (dx >= TOUCH_TOLERANCE || dy >= TOUCH_TOLERANCE) {
-			// 从x1,y1到x2,y2画一条贝塞尔曲线，更平滑(直接用mPath.lineTo也是可以的)
+			
 			mPath.quadTo(mX, mY, (x + mX) / 2, (y + mY) / 2);
 			mX = x;
 			mY = y;
@@ -179,21 +176,19 @@ public class FingerView extends View {
 	private void touch_up() {
 		mPath.lineTo(mX, mY);
 		mCanvas.drawPath(mPath, mPaint);
-		// 将一条完整的路径保存下来(相当于入栈操作)
+		
 		savePath.add(dp);
-		mPath = null;// 重新置空
+		mPath = null;
 	}
 
-	/**
-	 * 撤销的核心思想就是将画布清空， 将保存下来的Path路径最后一个移除掉， 重新将路径画在画布上面。
-	 */
+	
 	public void undo() {
 		mBitmap = Bitmap.createBitmap(screenWidth, screenHeight,
 				Bitmap.Config.ARGB_8888);
-		mCanvas.setBitmap(mBitmap);// 重新设置画布，相当于清空画布
-		// 清空画布，但是如果图片有背景的话，则使用上面的重新初始化的方法，用该方法会将背景清空掉…
+		mCanvas.setBitmap(mBitmap);
+		
 		if (savePath != null && savePath.size() > 0) {
-			// 移除最后一个path,相当于出栈操作
+			
 			savePath.remove(savePath.size() - 1);
 
 			Iterator<DrawPath> iter = savePath.iterator();
@@ -201,9 +196,9 @@ public class FingerView extends View {
 				DrawPath drawPath = iter.next();
 				mCanvas.drawPath(drawPath.path, drawPath.paint);
 			}
-			invalidate();// 刷新
+			invalidate();
 
-			/* 在这里保存图片纯粹是为了方便,保存图片进行验证 */
+			
 			String fileUrl = Environment.getExternalStorageDirectory()
 					.toString() + "/android/data/test.png";
 			try {
@@ -220,11 +215,9 @@ public class FingerView extends View {
 		}
 	}
 
-	/**
-	 * 重做的核心思想就是将撤销的路径保存到另外一个集合里面(栈)， 然后从redo的集合里面取出最顶端对象， 画在画布上面即可。
-	 */
+	
 	public void redo() {
-		// 如果撤销你懂了的话，那就试试重做吧。
+		
 	}
 
 	@Override
@@ -235,7 +228,7 @@ public class FingerView extends View {
 		switch (event.getAction()) {
 		case MotionEvent.ACTION_DOWN:
 			if (null != task){ 
-				task.cancel();  //将原任务从队列中移除 
+				task.cancel();  
 				task = new TimerTask(){
 			       public void run() {  
 				       Message message = new Message();      
@@ -245,7 +238,7 @@ public class FingerView extends View {
 				 };
 			} 
 
-			System.out.println("触摸坐标-----====X坐标:" +x +"----====Y坐标:"+y);
+			
 			if(null == fingerMatrix){
 				fingerMatrix =new FingerMatrix();
 				fingerMatrix.init(x, y);
@@ -254,9 +247,9 @@ public class FingerView extends View {
 				fingerMatrix.setY(y);
 			}
 			
-			// 每次down下去重新new一个Path
+			
 			mPath = new Path();
-			// 每一次记录的路径对象是不一样的
+			
 			dp = new DrawPath();
 			dp.path = mPath;
 			dp.paint = mPaint;
@@ -265,7 +258,7 @@ public class FingerView extends View {
 			break;
 		case MotionEvent.ACTION_MOVE:
 			if (null != task){ 
-				task.cancel();  //将原任务从队列中移除 
+				task.cancel();  
 				task = new TimerTask(){
 			       public void run() {  
 				       Message message = new Message();      
@@ -275,7 +268,7 @@ public class FingerView extends View {
 				 };
 			} 
 
-			System.out.println("滑动时坐标-----====X坐标:" +x +"----====Y坐标:"+y);
+			
 			if(null != fingerMatrix){
 				fingerMatrix.setX(x);
 				fingerMatrix.setY(y);
@@ -285,7 +278,7 @@ public class FingerView extends View {
 			invalidate();
 			break;
 		case MotionEvent.ACTION_UP:
-			System.out.println("抬起坐标-----====X坐标:" +x +"----====Y坐标:"+y);
+			
 			if(null != fingerMatrix){
 				fingerMatrix.setX(x);
 				fingerMatrix.setY(y);
@@ -296,7 +289,7 @@ public class FingerView extends View {
 			
 			if(null!=timer){
 				if (null != task){ 
-					task.cancel();  //将原任务从队列中移除 
+					task.cancel();   
 					task = new TimerTask(){
 				       public void run() {  
 					       Message message = new Message();      
@@ -322,21 +315,21 @@ public class FingerView extends View {
       public void handleMessage(Message msg) {  
          switch (msg.what) {      
              case CUT_BITMAP_SEND_TO_ACTIVITY:
-            	 System.out.println("*********0.handler发消息告诉activity处理数据 *********");
+            	
             	 Bitmap tempBitmap=mBitmap;
-            	 //1.得到绘制的区域坐标
+            	 
             	 if(null != fingerMatrix){
             		 float maxX = fingerMatrix.getMaxX();
             		 float minX = fingerMatrix.getMinX();
             		 float maxY = fingerMatrix.getMaxY();
                 	 float minY = fingerMatrix.getMinY();
-                	 System.out.println("矩阵的坐标信息为：-======maxX:"+maxX+"----====maxY:"+maxY+"----====minX:"+minX+"----====minY:"+minY); 
+                	 
                 	 
                 	 int cutMinX = (int) (minX - 15);
                 	 int cutMinY = (int) (minY - 15);
                 	 int cutMaxX = (int) (maxX + 15);
                 	 int cutMaxY = (int) (maxY + 15);
-                	 //处理设置裁剪位置
+                	
                 	 if(cutMinX<0){
                 		 cutMinX=1;
                 	 }
@@ -362,19 +355,12 @@ public class FingerView extends View {
                 	 
                 	 tempBitmap = Bitmap.createBitmap(tempBitmap, cutMinX, cutMinY, width, height);  
 //                	 tempBitmap = Bitmap.createBitmap(tempBitmap, (int)minX, (int)minY, width, height);  
-                	 System.out.println("裁剪bitmap成功");
+                
             	 }
-            	 //2.重置位置矩阵信息
+            	 
             	 fingerMatrix = null;
             	 
-//            	 //这里目前传递的是全屏的bitmap，应该为绘制最小x,y轴到最大xy轴的区域 +一定空白区域的图片
-//            	 for(int i=0;i<savePath.size();i++){
-//            		 DrawPath  tempDrawPath= savePath.get(i);
-//            		 Path tempPath = new Path(); 
-//            		 tempPath= tempDrawPath.path;
-//            	 }
-            	 
-            	/* 在这里保存图片纯粹是为了方便,保存图片进行验证 */
+//           
      			String fileUrl = Environment.getExternalStorageDirectory()
      					.toString() + "/android/data/test111.png";
      			try {
@@ -416,19 +402,17 @@ public class FingerView extends View {
 	 };
 	 
 	 
-	 /**
-	  * 初始化数据并刷新屏幕
-	  */
+	 
 	 private void renovate(){
-		 System.out.println("*********1.初始化数据并刷新屏幕 *********");
+		
     	 if (savePath != null && savePath.size() > 0) {
     		 savePath.removeAll(savePath);
     		 mBitmap = Bitmap.createBitmap(screenWidth, screenHeight,Bitmap.Config.ARGB_8888);
     		 mCanvas.setBitmap(mBitmap);
-    		 System.out.println("*********2.初始化数据成功 *********");
+    		 
     	 }
-		 invalidate();// 刷新屏幕
-		 System.out.println("*********3.更新屏幕数据成功 *********");
+		 invalidate();
+		
 	     if(null!=timer){
 	    	 task.cancel();
 	     }

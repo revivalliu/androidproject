@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Gallery;
 import android.widget.ImageButton;
@@ -26,7 +27,7 @@ abstract class BaseActivity extends Activity {
 	
 	
 	
-	protected ImageButton categoryBtn;
+	protected Button categoryBtn;
 	protected Spinner spinner;
 	protected EditText titleEdit;
 	protected EditText contentEdit;
@@ -108,7 +109,7 @@ abstract class BaseActivity extends Activity {
 	}
 
 	protected void findViews() {
-		categoryBtn = (ImageButton) findViewById(R.id.category_btn);
+		categoryBtn = (Button) findViewById(R.id.category_btn);
 		spinner = (Spinner) findViewById(R.id.spinner);
 		titleEdit = (EditText) findViewById(R.id.title_et);
 		contentEdit = (EditText) findViewById(R.id.content_et);

@@ -7,14 +7,7 @@ public class FingerMatrix {
 	private float minX = 0;
 	private float minY = 0;
 	
-	
-	
-	
-	/**
-	 * 
-	 * @param x
-	 * @param y
-	 */
+
 	public void init(float x,float y){
 		maxX=x;
 		minX=x;
@@ -25,13 +18,13 @@ public class FingerMatrix {
 	public void setX(float x){
 		if(x<0)
 			return;
-		if(maxX == minX){ //第一次赋值
+		if(maxX == minX){ 
 			if(x>maxX){
 				maxX=x;
 			}else if(x<minX){
 				minX=x;
 			}
-		}else{  //第二次赋值
+		}else{  
 			if(x > maxX && x > minX){
 				maxX=x;
 			}else if(x < maxX && x < minX){
@@ -43,13 +36,13 @@ public class FingerMatrix {
 	public void setY(float y){
 		if(y<0)
 			return;
-		if(maxY == minY){ //第一次赋值
+		if(maxY == minY){ 
 			if(y > maxY){
 				maxY= y;
 			}else if(y < minY){
 				minY= y ;
 			}
-		}else{  //第二次赋值
+		}else{ 
 			if(y > maxY && y > minY){
 				maxY=y;
 			}else if(y < maxY && y < minY){

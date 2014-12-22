@@ -9,15 +9,15 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
         
-	    <ImageButton
+	    <Button
 	        android:id="@+id/category_btn"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:onClick="onClick"
 		    android:layout_alignParentLeft="true"
 		    android:layout_centerVertical="true"
-		    android:background="@drawable/btn2_bg"
-		    android:src="@drawable/folder" />
+		    android:text="Choose Category"
+            android:drawableLeft="@drawable/folder"/>
 
 		<Spinner
 		    android:id="@+id/spinner"
@@ -109,6 +109,6 @@
         android:background="@drawable/btn_bg"
         android:contentDescription="Save "
         android:onClick="onClick"
-        android:src="@drawable/ok" />
+        android:src="@drawable/ic_action_accept" />
 
 </LinearLayout>
