@@ -1,4 +1,4 @@
-Androidprojec
+Androidproject
 ==============
 Introduction of procrastinationX.
 
@@ -10,7 +10,7 @@ Cute animation and icons, customized toast welcome image along with the rich fun
 
 Easy navigation, easy to use, more features and more funs. Password is at hand when privacy is required. 
 
-Compile and Run
+Compile and run
 ==============
 Developed in Eclipse, and tested on Google Nexus 5.0. procrastinationX is easy to compile and easy to run.
 
