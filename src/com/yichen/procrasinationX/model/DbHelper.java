@@ -45,9 +45,9 @@ public class DbHelper extends SQLiteOpenHelper {
 		
 		Note note = new Note();
 		note.setCategoryId(categoryId);
-		note.setTitle("Read me");
+		note.setTitle("About me");
 		note.setType(Note.BASIC);
-		note.setContent("This app allows you to create notes, checklists, and snapshots quickly and easily. \n\nAdditionally, you may create folders to organize your notes and password protect them as well. Set a password in the Settings page to restrict access to locked items. \n\nRemember to long press an item to see more options.");
+		note.setContent("This app allows you to easily manage task and clock reminder: specific features include quick notes, convenient check list, photo image, doodle manuscript, voice audio memo, voice recognition - speech to text, clock reminder, time count down, share function, location reminder, customized settings, sign-in functions and more. \n\nDon't forget to long press for more options. \n\nYichen ");
 		note.save(db);
 		
 		// Personal
@@ -67,7 +67,7 @@ public class DbHelper extends SQLiteOpenHelper {
 		ci.save(db);
 		ci.reset();		
 		ci.setNoteId(noteId);
-		ci.setName("Rate this app on Google Play");
+		ci.setName("Rate this app.");
 		ci.save(db);
 		ci.reset();
 		ci.setNoteId(noteId);

@@ -9,10 +9,6 @@ import android.database.sqlite.SQLiteDatabase;
 import com.yichen.procrasinationX.SmartPad;
 import com.yichen.procrasinationX.common.Util;
 
-/**
- * @author appsrox.com
- *
- */
 public class Category extends BaseModel {
 	
 	public static final String TABLE_NAME = "category";

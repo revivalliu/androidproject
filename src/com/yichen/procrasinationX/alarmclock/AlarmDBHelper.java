@@ -9,7 +9,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
-
 import com.yichen.procrasinationX.alarmclock.AlarmContract.Alarm;
 
 public class AlarmDBHelper extends SQLiteOpenHelper {
@@ -82,14 +81,18 @@ public class AlarmDBHelper extends SQLiteOpenHelper {
         return values;
 	}
 	
+	public long updateAlarm(AlarmModel model) {
+		ContentValues values = populateContent(model);
+        return getWritableDatabase().update(Alarm.TABLE_NAME, values, Alarm._ID + " = ?", new String[] { String.valueOf(model.id) });
+	}
+	
 	public long createAlarm(AlarmModel model) {
 		ContentValues values = populateContent(model);
         return getWritableDatabase().insert(Alarm.TABLE_NAME, null, values);
 	}
 	
-	public long updateAlarm(AlarmModel model) {
-		ContentValues values = populateContent(model);
-        return getWritableDatabase().update(Alarm.TABLE_NAME, values, Alarm._ID + " = ?", new String[] { String.valueOf(model.id) });
+	public int deleteAlarm(long id) {
+		return getWritableDatabase().delete(Alarm.TABLE_NAME, Alarm._ID + " = ?", new String[] { String.valueOf(id) });
 	}
 	
 	public AlarmModel getAlarm(long id) {
@@ -126,7 +129,4 @@ public class AlarmDBHelper extends SQLiteOpenHelper {
 		return null;
 	}
 	
-	public int deleteAlarm(long id) {
-		return getWritableDatabase().delete(Alarm.TABLE_NAME, Alarm._ID + " = ?", new String[] { String.valueOf(id) });
-	}
 }

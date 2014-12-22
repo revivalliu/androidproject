@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
 
+//help activity
 public class Help extends Activity {
 
     @Override

@@ -5,8 +5,8 @@
     
     <string name="no_data">No data</string>
     
-    <string name="manage">Category</string>
-    <string name="browse">Notes</string>
+    <string name="manage">Manage</string>
+    <string name="browse">Browse</string>
     <string name="doodle">Doodle</string>
     
     <string name="new_item">New</string>

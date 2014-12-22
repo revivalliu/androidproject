@@ -36,12 +36,10 @@ public class SmartPad extends Application {
 	public static final String RINGTONE_PREF = "ringtone_pref";
 	
 	public static final String DEFAULT_DATE_FORMAT = "yyyy-M-d";
-	//--+ remindme
-
+	
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		
 		PreferenceManager.setDefaultValues(this, R.xml.settings, false);
 		sp = PreferenceManager.getDefaultSharedPreferences(this);
 		
